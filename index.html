@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="ru" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Премиальный ремонт квартир бизнес- и премиум-класса под ключ</title>
+    <meta name="description" content="Ремонт и отделка квартир бизнес- и премиум-класса под ключ в Москве и области. Договор, сроки, авторский надзор, комплектация и реализация." />
+    <link rel="canonical" href="https://example.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Премиальный ремонт под ключ" />
+    <meta property="og:description" content="Ремонт и отделка квартир бизнес- и премиум-класса под ключ. Реализованные проекты, прозрачные сметы, гарантии." />
+    <meta property="og:url" content="https://example.com/" />
+    <!-- OG: 1600x900, светлый интерьер -->
+    <meta property="og:image" content="https://example.com/og-cover-1600x900.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Tailwind CDN для прототипа. В продакшене собрать через npm/Vite. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      :root {
+        --bg:#F5F3EF;       /* общий фон */
+        --bg-soft:#FAF8F5;  /* мягкие секции */
+        --bg-card:#FFFFFF;  /* карточки, формы */
+        --text:#151515;
+        --muted:#7D828C;
+        --line:#E3E3EA;
+        --accent:#C8A163;   /* тёплый металл */
+        --accent-soft:rgba(200,161,99,0.14);
+      }
+
+      @font-face {
+        font-family:"PRDisplay";
+        src:url("/fonts/manrope-variable-cyrillic.woff2") format("woff2-variations");
+        font-weight:300 800;
+        font-display:swap;
+      }
+      @font-face {
+        font-family:"PRText";
+        src:url("/fonts/inter-variable-cyrillic.woff2") format("woff2-variations");
+        font-weight:300 700;
+        font-display:swap;
+      }
+
+      html { scroll-behavior:smooth; }
+
+      body {
+        font-family:"PRText",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+        font-size:15px;
+        line-height:1.6;
+        background-color:var(--bg);
+        color:var(--text);
+      }
+
+      h1,h2,h3,h4,h5,h6,.heading {
+        font-family:"PRDisplay","PRText",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+        letter-spacing:0.02em;
+      }
+
+      h1 { font-weight:600; }
+      h2 { font-weight:600; }
+
+      .cta {
+        border-radius:16px;
+        text-transform:uppercase;
+        letter-spacing:0.12em;
+        font-size:11px;
+        font-weight:600;
+        transition:transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, color 200ms ease;
+      }
+      .cta:focus-visible {
+        outline:2px solid var(--accent);
+        outline-offset:2px;
+      }
+      .cta--primary {
+        background:var(--accent);
+        color:#fff;
+        box-shadow:0 18px 40px rgba(16,16,16,0.12);
+      }
+      .cta--primary:hover {
+        transform:translateY(-2px);
+        background:#b68c4f;
+      }
+      .cta--ghost {
+        border:1px solid var(--accent);
+        background:var(--bg-card);
+        color:var(--accent);
+      }
+      .cta--ghost:hover {
+        transform:translateY(-2px);
+        border-color:#b68c4f;
+        color:#b68c4f;
+      }
+
+      .card-hover {
+        transition:transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+      }
+      .card-hover:hover {
+        transform:translateY(-6px);
+        border-color:var(--accent);
+        box-shadow:0 20px 45px rgba(18,18,18,0.12);
+      }
+
+      .footer-shell {
+        position:relative;
+        background:#111111;
+        color:#f5f3ef;
+        overflow:hidden;
+        border-top:1px solid rgba(255,255,255,0.08);
+      }
+      .footer-shell::before,
+      .footer-shell::after {
+        content:"";
+        position:absolute;
+        border-radius:999px;
+        pointer-events:none;
+      }
+      .footer-shell::before {
+        width:460px;
+        height:460px;
+        background:radial-gradient(circle, rgba(200,161,99,0.35), transparent 70%);
+        top:-140px;
+        right:-120px;
+      }
+      .footer-shell::after {
+        width:320px;
+        height:320px;
+        background:radial-gradient(circle, rgba(255,255,255,0.08), transparent 80%);
+        bottom:-160px;
+        left:-60px;
+      }
+      .footer-link {
+        display:inline-flex;
+        align-items:center;
+        gap:0.4rem;
+        font-size:11px;
+        letter-spacing:0.03em;
+        color:rgba(255,255,255,0.72);
+        transition:color 200ms ease, transform 200ms ease;
+      }
+      .footer-link::before {
+        content:"";
+        width:8px;
+        height:1px;
+        background:rgba(255,255,255,0.35);
+        transition:width 200ms ease, background-color 200ms ease;
+      }
+      .footer-link:hover {
+        color:#fff;
+        transform:translateX(2px);
+      }
+      .footer-link:hover::before {
+        width:18px;
+        background:var(--accent);
+      }
+
+      @media (min-width:640px) {
+        .advantage-item + .advantage-item {
+          border-left:1px solid var(--line);
+          padding-left:1.5rem;
+          margin-left:1.5rem;
+        }
+      }
+
+      .focus-ring:focus {
+        outline:2px solid var(--accent);
+        outline-offset:2px;
+      }
+    </style>
+
+    <!-- JSON-LD LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Премиальный ремонт под ключ",
+      "url": "https://example.com/",
+      "telephone": "+7-000-000-00-00",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Москва",
+        "streetAddress": "ул. Пример, 1",
+        "postalCode": "101000",
+        "addressCountry": "RU"
+      },
+      "areaServed": "Москва и область"
+    }
+    </script>
+  </head>
+
+  <body class="h-full bg-[var(--bg)] text-[var(--text)] antialiased selection:bg-[var(--accent-soft)] selection:text-[var(--text)]">
+    <!-- HEADER -->
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-[var(--line)] bg-[color:rgba(255,255,255,0.96)] backdrop-blur">
+      <div class="mx-auto max-w-6xl px-4 lg:px-6 h-16 flex items-center justify-between">
+        <a href="#hero" class="text-sm font-semibold tracking-[0.16em] uppercase text-[#202020] focus-ring">
+          PremiumRemont
+        </a>
+        <nav aria-label="Главное меню" class="hidden md:block">
+          <ul class="flex gap-7 text-xs text-[var(--muted)]">
+            <li><a href="#portfolio" class="hover:text-[var(--text)] focus-ring">Портфолио</a></li>
+            <li><a href="#services" class="hover:text-[var(--text)] focus-ring">Услуги</a></li>
+            <li><a href="#process" class="hover:text-[var(--text)] focus-ring">Процесс</a></li>
+            <li><a href="#team" class="hover:text-[var(--text)] focus-ring">Команда</a></li>
+            <li><a href="#contacts" class="hover:text-[var(--text)] focus-ring">Контакты</a></li>
+          </ul>
+        </nav>
+        <a href="#lead" class="cta cta--primary hidden md:inline-flex items-center justify-center px-5 py-2.5">
+          Обсудить проект
+        </a>
+        <button id="menuBtn" class="md:hidden p-2 focus-ring" aria-label="Меню">
+          <svg width="22" height="22" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h16M3 11h16M3 16h12"/></svg>
+        </button>
+      </div>
+      <nav id="mobileNav" class="md:hidden hidden border-t border-[var(--line)] bg-[var(--bg-card)]">
+        <ul class="mx-auto max-w-6xl px-4 py-3 space-y-2 text-xs text-[var(--muted)]">
+          <li><a href="#portfolio" class="block py-1 hover:text-[var(--text)]">Портфолио</a></li>
+          <li><a href="#services" class="block py-1 hover:text-[var(--text)]">Услуги</a></li>
+          <li><a href="#process" class="block py-1 hover:text-[var(--text)]">Процесс</a></li>
+          <li><a href="#team" class="block py-1 hover:text-[var(--text)]">Команда</a></li>
+          <li><a href="#contacts" class="block py-1 hover:text-[var(--text)]">Контакты</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="pt-16">
+      <!-- HERO -->
+      <section id="hero" class="pt-10 pb-16">
+        <div class="mx-auto max-w-6xl px-4 lg:px-6 grid lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] gap-12 items-center">
+          <div>
+            <p class="text-[10px] uppercase tracking-[0.18em] text-[var(--muted)]">Premium · Remont</p>
+            <h1 class="mt-4 text-3xl sm:text-[38px] lg:text-[42px] leading-[1.35] max-w-[60ch]">
+              Ремонт и отделка квартир бизнес- и премиум-класса под ключ.
+            </h1>
+            <p class="mt-5 text-[var(--muted)] max-w-[60ch] text-sm sm:text-base leading-relaxed">
+              Москва и область. Квартиры от 80 м². Фиксированные сроки по договору, авторский надзор, комплектация и контроль качества на каждом этапе.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="#lead" class="cta cta--primary inline-flex items-center justify-center px-7 py-3">
+                Обсудить проект
+              </a>
+            </div>
+            <div class="mt-6 flex items-center gap-3 text-[10px] uppercase tracking-[0.16em] text-[var(--muted)]">
+              <span class="h-px w-10 bg-[var(--accent)]"></span>
+              <p>Сроки по договору · Авторский надзор · Один подрядчик</p>
+            </div>
+          </div>
+
+          <!-- HERO IMAGE -->
+          <div class="relative">
+            <!-- Hero визуал:
+                 1200x800, светлый интерьер, общий план.
+                 Без людей, без брендинга поставщиков. -->
+            <div class="relative rounded-[32px] border border-[var(--line)] bg-[var(--bg-card)] overflow-hidden shadow-sm card-hover group">
+              <img
+                src="/media/placeholders/hero-1200x800.jpg"
+                alt="Светлый интерьер реализованного проекта"
+                width="1200"
+                height="800"
+                class="w-full h-[300px] sm:h-[360px] lg:h-[420px] object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ПРЕИМУЩЕСТВА -->
+      <section class="border-y border-[var(--line)] bg-[var(--bg-soft)] py-16">
+        <div class="mx-auto max-w-6xl px-4 lg:px-6 grid gap-y-10 gap-x-6 sm:grid-cols-4">
+          <div class="space-y-2 advantage-item">
+            <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Сроки</div>
+            <div class="text-sm font-semibold">Фиксируем в договоре</div>
+            <p class="text-[11px] text-[var(--muted)]">План-график и ответственность прописаны, без размазанной «ориентировочности».</p>
+          </div>
+          <div class="space-y-2 advantage-item">
+            <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Куратор</div>
+            <div class="text-sm font-semibold">Персональный прораб</div>
+            <p class="text-[11px] text-[var(--muted)]">Авторский надзор, один контакт, еженедельные отчёты.</p>
+          </div>
+          <div class="space-y-2 advantage-item">
+            <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Материалы</div>
+            <div class="text-sm font-semibold">Премиальная комплектация</div>
+            <p class="text-[11px] text-[var(--muted)]">Официальные поставки, логистика, контроль спецификаций.</p>
+          </div>
+          <div class="space-y-2 advantage-item">
+            <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Юр. база</div>
+            <div class="text-sm font-semibold">Прозрачные договоры</div>
+            <p class="text-[11px] text-[var(--muted)]">Полный пакет документов и гарантийные обязательства.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ПОРТФОЛИО (Срез) -->
+      <section id="portfolio" class="py-20">
+        <div class="mx-auto max-w-6xl px-4 lg:px-6">
+          <div class="flex items-end justify-between gap-4">
+            <h2 class="text-2xl">Реализованные проекты</h2>
+            <a href="/portfolio" class="text-[11px] text-[var(--muted)] hover:text-[var(--text)]">Смотреть все проекты</a>
+          </div>
+          <div class="mt-8 grid gap-6 sm:grid-cols-3">
+            <!-- Карточка 1 -->
+            <article class="group rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] shadow-sm card-hover">
+              <!-- 900x600 -->
+              <img
+                src="/media/placeholders/project-1-900x600.jpg"
+                alt="Интерьер пентхауса в современном стиле"
+                width="900"
+                height="600"
+                class="h-44 w-full object-cover"
+              />
+              <div class="p-4 space-y-1.5">
+                <div class="flex justify-between text-[10px] text-[var(--muted)]">
+                  <span>ЖК «Пример» · Москва</span>
+                  <span>210 м²</span>
+                </div>
+                <h3 class="text-sm font-semibold">Современный минимализм для семьи</h3>
+                <p class="text-[11px] text-[var(--muted)]">6 месяцев · полный цикл под ключ.</p>
+              </div>
+            </article>
+
+            <!-- Карточка 2 -->
+            <article class="group rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] shadow-sm card-hover">
+              <!-- 900x600 -->
+              <img
+                src="/media/placeholders/project-2-900x600.jpg"
+                alt="Кухня-гостиная в светлой классике"
+                width="900"
+                height="600"
+                class="h-44 w-full object-cover"
+              />
+              <div class="p-4 space-y-1.5">
+                <div class="flex justify-between text-[10px] text-[var(--muted)]">
+                  <span>ЖК «Сити» · Москва</span>
+                  <span>145 м²</span>
+                </div>
+                <h3 class="text-sm font-semibold">Спокойная классика без перегруза</h3>
+                <p class="text-[11px] text-[var(--muted)]">5 месяцев · дизайн-проект + реализация.</p>
+              </div>
+            </article>
+
+            <!-- Карточка 3 -->
+            <article class="group rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] shadow-sm card-hover">
+              <!-- 900x600 -->
+              <img
+                src="/media/placeholders/project-3-900x600.jpg"
+                alt="Спальня в тёплом современном стиле"
+                width="900"
+                height="600"
+                class="h-44 w-full object-cover"
+              />
+              <div class="p-4 space-y-1.5">
+                <div class="flex justify-between text-[10px] text-[var(--muted)]">
+                  <span>ЖК «Парк» · Москва</span>
+                  <span>98 м²</span>
+                </div>
+                <h3 class="text-sm font-semibold">Тёплый модерн в компактном формате</h3>
+                <p class="text-[11px] text-[var(--muted)]">4 месяца · контроль узлов и отделки.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ЦИФРЫ И ОТЗЫВЫ -->
+      <section class="border-t border-[var(--line)] bg-[var(--bg-soft)] py-20">
+        <div class="mx-auto max-w-6xl px-4 lg:px-6 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] items-stretch">
+          <div class="rounded-[28px] border border-[var(--line)] bg-[var(--bg-card)] p-8">
+            <p class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Цифры</p>
+            <h3 class="mt-3 text-xl font-semibold">Прозрачные KPI по каждому объекту</h3>
+            <dl class="mt-8 grid gap-6 sm:grid-cols-3 text-sm">
+              <div>
+                <dt class="text-[11px] text-[var(--muted)]">Средний срок объектов</dt>
+                <dd class="mt-2 text-2xl font-semibold text-[var(--text)]">5.5 мес</dd>
+              </div>
+              <div>
+                <dt class="text-[11px] text-[var(--muted)]">Повторные клиенты</dt>
+                <dd class="mt-2 text-2xl font-semibold text-[var(--text)]">42%</dd>
+              </div>
+              <div>
+                <dt class="text-[11px] text-[var(--muted)]">Команда на проект</dt>
+                <dd class="mt-2 text-2xl font-semibold text-[var(--text)]">8 спец.</dd>
+              </div>
+            </dl>
+            <p class="mt-6 text-[12px] text-[var(--muted)]">Инженер по качеству фиксирует замечания в базе, а клиент видит статус сметы и графика работ онлайн. Чеки и спецификации доступны в личном кабинете.</p>
+          </div>
+          <div class="rounded-[28px] border border-[var(--line)] bg-[var(--bg-card)] p-8 flex flex-col gap-6">
+            <p class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Отзывы</p>
+            <blockquote class="text-sm leading-relaxed text-[var(--text)]">
+              «Работаем со студией уже второй объект. Команда курирует поставщиков, проверяет чертежи и выдаёт еженедельные отчёты в едином канале, поэтому мы понимаем статус работ без лишних встреч.»
+            </blockquote>
+            <div class="text-[11px] text-[var(--muted)]">
+              Андрей и Екатерина, 210 м², Патриаршие
+            </div>
+            <div class="rounded-2xl bg-[var(--accent-soft)] px-6 py-5 text-[11px] text-[var(--muted)]">
+              Личный куратор: проект-менеджер + ведущий прораб и дизайнер остаются в контакте с клиентом до окончания гарантийного срока.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ПРОЦЕСС -->
+      <section id="process" class="border-y border-[var(--line)] bg-[var(--bg-soft)] py-20">
+        <div class="mx-auto max-w-6xl px-4 lg:px-6">
+          <h2 class="text-2xl">Процесс работы</h2>
+          <ol class="mt-12 grid gap-8 sm:grid-cols-5 text-[12px] text-[var(--muted)]">
+            <li class="space-y-2 border-l border-[var(--line)] pl-4">
+              <div class="text-[9px] tracking-[0.16em] uppercase text-[var(--accent)]">01</div>
+              <div class="text-sm font-semibold text-[var(--text)]">Встреча</div>
+              <p>Выезд или онлайн. Анализ объекта и задачи.</p>
+            </li>
+            <li class="space-y-2 border-l border-[var(--line)] pl-4">
+              <div class="text-[9px] tracking-[0.16em] uppercase text-[var(--accent)]">02</div>
+              <div class="text-sm font-semibold text-[var(--text)]">ТЗ и смета</div>
+              <p>Фиксируем состав работ, сроки, бюджеты.</p>
+            </li>
+            <li class="space-y-2 border-l border-[var(--line)] pl-4">
+              <div class="text-[9px] tracking-[0.16em] uppercase text-[var(--accent)]">03</div>
+              <div class="text-sm font-semibold text-[var(--text)]">Проект</div>
+              <p>Дизайн, рабочая документация, графики поставок.</p>
+            </li>
+            <li class="space-y-2 border-l border-[var(--line)] pl-4">
+              <div class="text-[9px] tracking-[0.16em] uppercase text-[var(--accent)]">04</div>
+              <div class="text-sm font-semibold text-[var(--text)]">Реализация</div>
+              <p>Авторский надзор, отчёты, комплектация.</p>
+            </li>
+            <li class="space-y-2 border-l border-[var(--line)] pl-4">
+              <div class="text-[9px] tracking-[0.16em] uppercase text-[var(--accent)]">05</div>
+              <div class="text-sm font-semibold text-[var(--text)]">Сдача и сервис</div>
+              <p>Финальная приёмка, гарантийное сопровождение.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ДОВЕРИЕ -->
+      <section class="py-16">
+        <div class="mx-auto max-w-6xl px-4 lg:px-6 grid gap-10 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] items-start">
+          <!-- Логотипы -->
+          <div>
+            <div class="text-[10px] uppercase tracking-[0.16em] text-[var(--muted)]">С нами работают</div>
+            <div class="mt-4 grid grid-cols-3 gap-4">
+              <!-- Логотипы девелоперов:
+                   200x80 или SVG, монохром -->
+              <div class="h-14 rounded-xl border border-[var(--line)] bg-[var(--bg-card)] flex items-center justify-center text-[8px] text-[var(--muted)]">Логотип</div>
+              <div class="h-14 rounded-xl border border-[var(--line)] bg-[var(--bg-card)] flex items-center justify-center text-[8px] text-[var(--muted)]">Логотип</div>
+              <div class="h-14 rounded-xl border border-[var(--line)] bg-[var(--bg-card)] flex items-center justify-center text-[8px] text-[var(--muted)]">Логотип</div>
+              <div class="h-14 rounded-xl border border-[var(--line)] bg-[var(--bg-card)] flex items-center justify-center text-[8px] text-[var(--muted)]">Логотип</div>
+              <div class="h-14 rounded-xl border border-[var(--line)] bg-[var(--bg-card)] flex items-center justify-center text-[8px] text-[var(--muted)]">Логотип</div>
+              <div class="h-14 rounded-xl border border-[var(--line)] bg-[var(--bg-card)] flex items-center justify-center text-[8px] text-[var(--muted)]">Логотип</div>
+            </div>
+          </div>
+          <!-- Отзывы -->
+          <div class="space-y-4">
+            <article class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-4 card-hover">
+              <p class="text-[11px] text-[var(--muted)]">«Смета, сроки и фактический результат совпали. Общение спокойное, отчёты по этапам, без сюрпризов.»</p>
+              <div class="mt-2 text-[9px] text-[var(--muted)]">Иван П., пентхаус 210 м², Москва</div>
+            </article>
+            <article class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-4 card-hover">
+              <p class="text-[11px] text-[var(--muted)]">«Команда взяла на себя проект, стройку и комплектацию. Для нас это был один подрядчик и один договор.»</p>
+              <div class="mt-2 text-[9px] text-[var(--muted)]">Елена С., 145 м², Москва-Сити</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- КОМАНДА -->
+      <section id="team" class="border-t border-[var(--line)] bg-[var(--bg-soft)] py-20">
+        <div class="mx-auto max-w-6xl px-4 lg:px-6">
+          <div class="flex items-end justify-between gap-4">
+            <h2 class="text-2xl">Команда</h2>
+            <a href="/team" class="text-[11px] text-[var(--muted)] hover:text-[var(--text)]">Вся команда</a>
+          </div>
+          <div class="mt-8 grid gap-6 sm:grid-cols-3">
+            <!-- Портрет 400x520, единый фон -->
+            <div class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-4 space-y-3 card-hover">
+              <img src="/media/placeholders/team-1-400x520.jpg" alt="Руководитель проектов" width="400" height="520" class="w-full h-52 object-cover rounded-xl" />
+              <div>
+                <div class="text-sm font-semibold">Алексей С.</div>
+                <p class="text-[11px] text-[var(--muted)]">Руководитель проектов · 12 лет · инженерные решения и сроки.</p>
+              </div>
+            </div>
+            <div class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-4 space-y-3 card-hover">
+              <img src="/media/placeholders/team-2-400x520.jpg" alt="Ведущий дизайнер" width="400" height="520" class="w-full h-52 object-cover rounded-xl" />
+              <div>
+                <div class="text-sm font-semibold">Мария К.</div>
+                <p class="text-[11px] text-[var(--muted)]">Ведущий дизайнер · 9 лет · планировки, свет, сложные узлы.</p>
+              </div>
+            </div>
+            <div class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-4 space-y-3 card-hover">
+              <img src="/media/placeholders/team-3-400x520.jpg" alt="Прораб" width="400" height="520" class="w-full h-52 object-cover rounded-xl" />
+              <div>
+                <div class="text-sm font-semibold">Сергей Н.</div>
+                <p class="text-[11px] text-[var(--muted)]">Прораб · 15 лет · реализация, контроль качества, согласования.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ЛИД-ФОРМА -->
+      <section id="lead" class="py-20">
+        <div class="mx-auto max-w-3xl px-4 lg:px-6">
+          <h2 class="text-2xl">Обсудить ваш проект</h2>
+          <p class="mt-2 text-[11px] text-[var(--muted)]">Оставьте контакты, прикрепите планировку или укажите ЖК. Ответим с предварительными рамками по срокам и бюджету.</p>
+          <form id="leadForm" class="mt-8 grid gap-5 sm:grid-cols-2 text-[12px]" novalidate>
+            <div>
+              <label for="name" class="block">Имя</label>
+              <input id="name" name="name" required class="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--bg-card)] px-3 py-2 focus-ring" />
+            </div>
+            <div>
+              <label for="phone" class="block">Телефон</label>
+              <input id="phone" name="phone" inputmode="tel" required class="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--bg-card)] px-3 py-2 focus-ring" />
+            </div>
+            <div>
+              <label for="type" class="block">Тип объекта</label>
+              <select id="type" name="type" class="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--bg-card)] px-3 py-2 focus-ring">
+                <option>Квартира</option>
+                <option>Пентхаус</option>
+                <option>Таунхаус</option>
+              </select>
+            </div>
+            <div>
+              <label for="area" class="block">Площадь, м²</label>
+              <input id="area" name="area" inputmode="numeric" class="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--bg-card)] px-3 py-2 focus-ring" />
+            </div>
+            <div class="sm:col-span-2">
+              <label for="time" class="block">Удобное время звонка</label>
+              <input id="time" name="time" class="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--bg-card)] px-3 py-2 focus-ring" />
+            </div>
+            <div class="sm:col-span-2 flex items-center gap-3">
+              <input id="agree" name="agree" type="checkbox" required class="h-4 w-4 rounded border-[var(--line)] bg-[var(--bg-card)] focus-ring" />
+              <label for="agree" class="text-[11px] text-[var(--muted)]">Согласен на обработку персональных данных</label>
+            </div>
+            <div class="sm:col-span-2 flex flex-wrap gap-4">
+              <button type="submit" class="cta cta--primary inline-flex items-center justify-center px-7 py-3">
+                Отправить заявку
+              </button>
+              <button type="button" id="btnKP" class="cta cta--ghost inline-flex items-center justify-center px-7 py-3">
+                Получить КП
+              </button>
+            </div>
+            <p id="formMessage" class="sm:col-span-2 text-[11px] text-[var(--muted)]"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- КОНТАКТЫ + ФУТЕР -->
+      <section id="contacts" class="border-t border-[var(--line)] bg-[var(--bg-soft)]">
+        <div class="mx-auto max-w-6xl px-4 lg:px-6 py-14 grid gap-10 lg:grid-cols-3">
+          <div class="space-y-2 text-[12px]">
+            <h2 class="text-lg font-semibold">Контакты</h2>
+            <p><a href="tel:+70000000000" class="hover:text-[var(--accent)]">+7 000 000-00-00</a></p>
+            <p class="flex gap-3">
+              <a href="https://wa.me/70000000000" class="text-[var(--muted)] hover:text-[var(--accent)]">WhatsApp</a>
+              <a href="https://t.me/username" class="text-[var(--muted)] hover:text-[var(--accent)]">Telegram</a>
+            </p>
+            <p class="text-[var(--muted)]">Москва, ул. Пример, 1</p>
+            <p class="text-[10px] text-[var(--muted)]">Срочные проекты / VIP: Иван Петров, +7 000 000-00-00</p>
+          </div>
+          <!-- Карта -->
+          <div class="lg:col-span-2">
+            <!-- 1200x400 или embed карты -->
+            <div class="h-64 rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] flex items-center justify-center text-[10px] text-[var(--muted)]">
+              Карта офиса / встраивание
+            </div>
+          </div>
+        </div>
+        <footer class="footer-shell mt-16">
+          <div class="mx-auto max-w-6xl px-4 lg:px-6 py-12 relative z-10 grid gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+            <div class="space-y-6">
+              <div class="flex flex-wrap items-center gap-3 text-[10px] uppercase tracking-[0.24em] text-white">
+                <span>PremiumRemont</span>
+                <span class="hidden sm:block flex-1 h-px bg-[color:rgba(255,255,255,0.2)]"></span>
+                <span class="text-[9px] tracking-[0.2em] text-[color:rgba(255,255,255,0.5)]">с 2010</span>
+              </div>
+              <p class="text-sm leading-relaxed text-[color:rgba(255,255,255,0.82)]">
+                Премиальный ремонт с единым куратором, авторским надзором и прозрачной сметой. Мы берем на себя инженерию, комплектацию и сервис до завершения гарантии.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="#lead" class="cta cta--primary inline-flex items-center justify-center px-7 py-3">Обсудить проект</a>
+                <a href="mailto:hello@example.com" class="cta cta--ghost inline-flex items-center justify-center px-7 py-3">hello@example.com</a>
+              </div>
+            </div>
+            <div class="grid gap-8 sm:grid-cols-2 text-[12px] text-[color:rgba(255,255,255,0.72)]">
+              <div class="space-y-3">
+                <div class="text-[10px] uppercase tracking-[0.18em] text-[color:rgba(255,255,255,0.5)]">Навигация</div>
+                <a class="footer-link" href="#portfolio">Портфолио</a>
+                <a class="footer-link" href="#services">Услуги</a>
+                <a class="footer-link" href="#process">Процесс</a>
+                <a class="footer-link" href="#team">Команда</a>
+                <a class="footer-link" href="#contacts">Контакты</a>
+              </div>
+              <div class="space-y-3">
+                <div class="text-[10px] uppercase tracking-[0.18em] text-[color:rgba(255,255,255,0.5)]">Документы</div>
+                <a class="footer-link" href="/legal">Юр. информация</a>
+                <a class="footer-link" href="/privacy">Политика конфиденциальности</a>
+                <a class="footer-link" href="/offer">Договор-оферта</a>
+                <a class="footer-link" href="/sitemap.xml">Карта сайта</a>
+              </div>
+              <div class="space-y-3 sm:col-span-2">
+                <div class="text-[10px] uppercase tracking-[0.18em] text-[color:rgba(255,255,255,0.5)]">Прямые контакты</div>
+                <p class="text-[12px] text-[color:rgba(255,255,255,0.85)]">+7 000 000-00-00 · WhatsApp / Telegram</p>
+                <p class="text-[11px] text-[color:rgba(255,255,255,0.6)]">VIP и срочные объекты — Иван Петров, +7 000 000-00-00</p>
+                <div class="flex gap-4 text-[11px] text-[color:rgba(255,255,255,0.7)]">
+                  <a class="footer-link" href="https://instagram.com/yourbrand">Instagram*</a>
+                  <a class="footer-link" href="https://vk.com/yourbrand">VK</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mx-auto max-w-6xl px-4 lg:px-6 pb-6 relative z-10">
+            <div class="border-t border-[color:rgba(255,255,255,0.15)] pt-6 text-[10px] text-[color:rgba(255,255,255,0.55)] flex flex-wrap items-center justify-between gap-3">
+              <span>© <span id="year"></span> PremiumRemont.</span>
+              <span>Все фото и видео на сайте должны быть с реализованных объектов. Сток запрещён.</span>
+            </div>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <script>
+      // мобильное меню
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      if (menuBtn && mobileNav) {
+        menuBtn.addEventListener('click', () => {
+          mobileNav.classList.toggle('hidden');
+        });
+      }
+
+      // год в футере
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // заглушка GA4
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // lead form
+      const form = document.getElementById('leadForm');
+      const msg = document.getElementById('formMessage');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const data = Object.fromEntries(new FormData(form).entries());
+          if (!data.name || !data.phone || !form.agree.checked) {
+            msg.textContent = 'Проверьте имя, телефон и согласие.';
+            msg.classList.remove('text-green-600');
+            return;
+          }
+          // тут отправка на backend
+          gtag('event','generate_lead',{form_id:'leadForm'});
+          gtag('event','form_submit',{form_id:'leadForm'});
+          msg.textContent = 'Заявка отправлена. Свяжемся для обсуждения деталей.';
+          form.reset();
+        });
+      }
+    </script>
+  </body>
+</html>
