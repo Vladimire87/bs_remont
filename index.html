@@ -305,10 +305,15 @@
       <section id="hero" class="relative isolate overflow-hidden text-white" aria-labelledby="hero-title">
         <div class="absolute inset-0 z-0">
           <img
-            src="media/hero.webp"
+            src="media/hero-768w.webp"
+            srcset="media/hero-480w.webp 480w,
+                    media/hero-768w.webp 768w,
+                    media/hero-1280w.webp 1280w,
+                    media/hero-1920w.webp 1920w"
+            sizes="100vw"
             alt="Светлый интерьер реализованного проекта"
-            width="1200"
-            height="800"
+            width="1920"
+            height="1280"
             class="h-full w-full"
             decoding="async"
             fetchpriority="high"
