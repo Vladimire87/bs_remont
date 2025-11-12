@@ -186,70 +186,76 @@
             <h2 id="portfolio-heading" class="text-2xl">Реализованные проекты</h2>
             <a href="/portfolio" class="text-[11px] text-[var(--muted)] hover:text-[var(--text)]">Смотреть все проекты</a>
           </div>
-          <div class="mt-8 grid gap-6 sm:grid-cols-3 auto-rows-fr">
+          <div class="mt-8 grid gap-8 sm:grid-cols-3">
             <!-- Карточка 1 -->
-            <article class="group flex h-full flex-col rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] shadow-sm card-hover overflow-hidden">
-              <!-- 900x600 -->
-              <img
-                src="https://placehold.co/900x600.jpg?text=Project+01"
-                alt="Интерьер пентхауса в современном стиле"
-                width="900"
-                height="600"
-                class="h-44 w-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="flex flex-1 flex-col gap-1.5 p-4">
-                <div class="flex justify-between text-[10px] text-[var(--muted)]">
-                  <span>ЖК «Пример» · Москва</span>
-                  <span>210 м²</span>
-                </div>
-                <h3 class="text-sm font-semibold">Современный минимализм для семьи</h3>
-                <p class="text-[11px] text-[var(--muted)]">6 месяцев · полный цикл под ключ.</p>
+            <a href="project-1.html" class="group flex h-full flex-col rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] shadow-sm card-hover overflow-hidden">
+              <div class="relative overflow-hidden aspect-[3/2] bg-[var(--line)]">
+                <img
+                  src="media/project-1-900x600.jpg"
+                  alt="Интерьер пентхауса в современном стиле"
+                  width="900"
+                  height="600"
+                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               </div>
-            </article>
+              <div class="flex flex-1 flex-col gap-3 p-6">
+                <div class="flex justify-between items-start text-[10px] text-[var(--muted)] uppercase tracking-wider">
+                  <span>ЖК «Пример» · Москва</span>
+                  <span class="font-medium">210 м²</span>
+                </div>
+                <h3 class="text-base font-semibold leading-tight group-hover:text-[var(--accent)] transition-colors duration-300">Современный минимализм для семьи</h3>
+                <p class="text-[11px] text-[var(--muted)] leading-relaxed">6 месяцев · полный цикл под ключ.</p>
+              </div>
+            </a>
 
             <!-- Карточка 2 -->
             <article class="group flex h-full flex-col rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] shadow-sm card-hover overflow-hidden">
-              <!-- 900x600 -->
-              <img
-                src="https://placehold.co/900x600.jpg?text=Project+02"
-                alt="Кухня-гостиная в светлой классике"
-                width="900"
-                height="600"
-                class="h-44 w-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="flex flex-1 flex-col gap-1.5 p-4">
-                <div class="flex justify-between text-[10px] text-[var(--muted)]">
+              <div class="relative overflow-hidden aspect-[3/2] bg-[var(--line)]">
+                <img
+                  src="media/project-2-900x600.jpg"
+                  alt="Кухня-гостиная в светлой классике"
+                  width="900"
+                  height="600"
+                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+              <div class="flex flex-1 flex-col gap-3 p-6">
+                <div class="flex justify-between items-start text-[10px] text-[var(--muted)] uppercase tracking-wider">
                   <span>ЖК «Сити» · Москва</span>
-                  <span>145 м²</span>
+                  <span class="font-medium">145 м²</span>
                 </div>
-                <h3 class="text-sm font-semibold">Спокойная классика без перегруза</h3>
-                <p class="text-[11px] text-[var(--muted)]">5 месяцев · дизайн-проект + реализация.</p>
+                <h3 class="text-base font-semibold leading-tight group-hover:text-[var(--accent)] transition-colors duration-300">Спокойная классика без перегруза</h3>
+                <p class="text-[11px] text-[var(--muted)] leading-relaxed">5 месяцев · дизайн-проект + реализация.</p>
               </div>
             </article>
 
             <!-- Карточка 3 -->
             <article class="group flex h-full flex-col rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] shadow-sm card-hover overflow-hidden">
-              <!-- 900x600 -->
-              <img
-                src="https://placehold.co/900x600.jpg?text=Project+03"
-                alt="Спальня в тёплом современном стиле"
-                width="900"
-                height="600"
-                class="h-44 w-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="flex flex-1 flex-col gap-1.5 p-4">
-                <div class="flex justify-between text-[10px] text-[var(--muted)]">
+              <div class="relative overflow-hidden aspect-[3/2] bg-[var(--line)]">
+                <img
+                  src="media/project-3-900x600.jpg"
+                  alt="Спальня в тёплом современном стиле"
+                  width="900"
+                  height="600"
+                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+              <div class="flex flex-1 flex-col gap-3 p-6">
+                <div class="flex justify-between items-start text-[10px] text-[var(--muted)] uppercase tracking-wider">
                   <span>ЖК «Парк» · Москва</span>
-                  <span>98 м²</span>
+                  <span class="font-medium">98 м²</span>
                 </div>
-                <h3 class="text-sm font-semibold">Тёплый модерн в компактном формате</h3>
-                <p class="text-[11px] text-[var(--muted)]">4 месяца · контроль узлов и отделки.</p>
+                <h3 class="text-base font-semibold leading-tight group-hover:text-[var(--accent)] transition-colors duration-300">Тёплый модерн в компактном формате</h3>
+                <p class="text-[11px] text-[var(--muted)] leading-relaxed">4 месяца · контроль узлов и отделки.</p>
               </div>
             </article>
           </div>
