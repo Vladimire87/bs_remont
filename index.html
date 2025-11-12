@@ -1,20 +1,22 @@
 <!doctype html>
 <html lang="ru" class="h-full">
   <head>
+    <!-- Meta Tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Премиальный ремонт квартир бизнес- и премиум-класса под ключ</title>
     <meta name="description" content="Ремонт и отделка квартир бизнес- и премиум-класса под ключ в Москве и области. Договор, сроки, авторский надзор, комплектация и реализация." />
     <link rel="canonical" href="https://example.com/" />
 
+    <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Премиальный ремонт под ключ" />
     <meta property="og:description" content="Ремонт и отделка квартир бизнес- и премиум-класса под ключ. Реализованные проекты, прозрачные сметы, гарантии." />
     <meta property="og:url" content="https://example.com/" />
-    <!-- OG: 1600x900, светлый интерьер -->
     <meta property="og:image" content="https://placehold.co/1600x900.jpg?text=Premium+Remont" />
     <meta name="twitter:card" content="summary_large_image" />
 
+    <!-- External Resources -->
     <!-- Tailwind CDN для прототипа. В продакшене собрать через npm/Vite. -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -23,194 +25,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
-      /* ===== Design Tokens ===== */
-      :root {
-        --bg:#F5F3EF;
-        --bg-soft:#FAF8F5;
-        --bg-card:#FFFFFF;
-        --text:#151515;
-        --muted:#7D828C;
-        --line:#E3E3EA;
-        --accent:#C8A163;
-        --accent-soft:rgba(200,161,99,0.14);
-      }
-
-      /* ===== Typography ===== */
-      /* Fonts loaded from Google Fonts CDN */
-      h1,h2,h3,h4,h5,h6,.heading {
-        font-family:"Manrope","Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-        letter-spacing:0.02em;
-        font-weight:600;
-      }
-
-      /* ===== Base Styles ===== */
-      *,*::before,*::after { box-sizing:border-box; }
-      html { scroll-behavior:smooth; }
-      @media (prefers-reduced-motion: reduce) {
-        html { scroll-behavior:auto; }
-        *,*::before,*::after {
-          animation-duration:0.01ms !important;
-          animation-iteration-count:1 !important;
-          transition-duration:0.01ms !important;
-        }
-      }
-      body {
-        font-family:"Inter","Manrope",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-        font-size:15px;
-        line-height:1.6;
-        background-color:var(--bg);
-        color:var(--text);
-      }
-      img,picture { display:block; max-width:100%; height:auto; }
-      a { color:inherit; text-decoration:none; }
-      button { font:inherit; color:inherit; }
-      .visually-hidden {
-        position:absolute;
-        width:1px;
-        height:1px;
-        padding:0;
-        margin:-1px;
-        border:0;
-        clip:rect(0 0 0 0);
-        clip-path:inset(50%);
-        overflow:hidden;
-        white-space:nowrap;
-      }
-
-      /* ===== Components ===== */
-      .cta {
-        border-radius:16px;
-        text-transform:uppercase;
-        letter-spacing:0.12em;
-        font-size:11px;
-        font-weight:600;
-        transition:transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, color 200ms ease;
-      }
-      .cta:focus-visible {
-        outline:2px solid var(--accent);
-        outline-offset:2px;
-      }
-      .cta--primary {
-        background:var(--accent);
-        color:#fff;
-        box-shadow:0 18px 40px rgba(16,16,16,0.12);
-      }
-      .cta--primary:hover {
-        transform:translateY(-2px);
-        background:#b68c4f;
-      }
-      .cta--ghost {
-        border:1px solid var(--accent);
-        background:var(--bg-card);
-        color:var(--accent);
-      }
-      .cta--ghost:hover {
-        transform:translateY(-2px);
-        border-color:#b68c4f;
-        color:#b68c4f;
-      }
-      .card-hover {
-        transition:transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
-      }
-      .card-hover:hover {
-        transform:translateY(-6px);
-        border-color:var(--accent);
-        box-shadow:0 20px 45px rgba(18,18,18,0.12);
-      }
-      .footer-shell {
-        position:relative;
-        background:#111111;
-        color:#f5f3ef;
-        overflow:hidden;
-        border-top:1px solid rgba(255,255,255,0.08);
-      }
-      .footer-shell::before,
-      .footer-shell::after {
-        content:"";
-        position:absolute;
-        border-radius:999px;
-        pointer-events:none;
-      }
-      .footer-shell::before {
-        width:460px;
-        height:460px;
-        background:radial-gradient(circle, rgba(200,161,99,0.35), transparent 70%);
-        top:-140px;
-        right:-120px;
-      }
-      .footer-shell::after {
-        width:320px;
-        height:320px;
-        background:radial-gradient(circle, rgba(255,255,255,0.08), transparent 80%);
-        bottom:-160px;
-        left:-60px;
-      }
-      .footer-link {
-        display:inline-flex;
-        align-items:center;
-        gap:0.4rem;
-        font-size:11px;
-        letter-spacing:0.03em;
-        color:rgba(255,255,255,0.72);
-        transition:color 200ms ease, transform 200ms ease;
-      }
-      .footer-link::before {
-        content:"";
-        width:8px;
-        height:1px;
-        background:rgba(255,255,255,0.35);
-        transition:width 200ms ease, background-color 200ms ease;
-      }
-      .footer-link:hover {
-        color:#fff;
-        transform:translateX(2px);
-      }
-      .footer-link:hover::before {
-        width:18px;
-        background:var(--accent);
-      }
-      .footer-column .footer-link {
-        display:flex;
-      }
-
-      /* ===== Utilities ===== */
-      @media (min-width:640px) {
-        .advantage-item + .advantage-item {
-          border-left:1px solid var(--line);
-          padding-left:1.5rem;
-          margin-left:1.5rem;
-        }
-      }
-      .focus-ring:focus {
-        outline:2px solid var(--accent);
-        outline-offset:2px;
-      }
-      
-      /* ===== Hero Section ===== */
-      #hero {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        min-height: 100vh;
-        margin-top: -4rem;
-      }
-      #hero > div:first-child {
-        position: absolute;
-        inset: 0;
-      }
-      #hero img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center center;
-      }
-      @media (min-width: 1280px) {
-        #hero img {
-          object-position: center 40%;
-        }
-      }
-    </style>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
 
     <!-- JSON-LD LocalBusiness -->
     <script type="application/ld+json">
@@ -699,105 +515,7 @@
       </section>
     </main>
 
-    <script>
-      const onReady = (callback) => {
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', callback, { once: true });
-        } else {
-          callback();
-        }
-      };
-
-      onReady(() => {
-        const $ = (id) => document.getElementById(id);
-
-        // мобильное меню
-        const menuBtn = $('menuBtn');
-        const mobileNav = $('mobileNav');
-        if (menuBtn && mobileNav) {
-          const setMenuState = (open) => {
-            menuBtn.setAttribute('aria-expanded', String(open));
-            mobileNav.hidden = !open;
-          };
-          menuBtn.addEventListener('click', () => setMenuState(mobileNav.hidden));
-          mobileNav.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('click', () => setMenuState(false));
-          });
-          window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) {
-              setMenuState(false);
-            }
-          });
-        }
-
-        // год в футере
-        const yearNode = $('year');
-        if (yearNode) {
-          yearNode.textContent = new Date().getFullYear();
-        }
-
-        // заглушка GA4
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); };
-
-        // lead form
-        const form = $('leadForm');
-        const msg = $('formMessage');
-        const proposalBtn = $('btnKP');
-        let submitIntent = 'lead';
-
-        const setMessage = (text, isSuccess = false) => {
-          if (!msg) return;
-          msg.textContent = text;
-          msg.style.color = isSuccess ? '#16a34a' : 'var(--muted)';
-        };
-
-        const sendAnalytics = (eventName, payload) => {
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', eventName, payload);
-          }
-        };
-
-        const triggerSubmit = () => {
-          if (!form) return;
-          if (typeof form.requestSubmit === 'function') {
-            form.requestSubmit();
-          } else {
-            form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
-          }
-        };
-
-        if (proposalBtn) {
-          proposalBtn.addEventListener('click', () => {
-            submitIntent = 'proposal';
-            triggerSubmit();
-          });
-        }
-
-        if (form) {
-          form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            if (!form.checkValidity()) {
-              setMessage('Проверьте обязательные поля и согласие.');
-              form.reportValidity();
-              submitIntent = 'lead';
-              return;
-            }
-
-            const formData = new FormData(form);
-            formData.append('intent', submitIntent);
-            const data = Object.fromEntries(formData.entries());
-
-            // TODO: отправка data на backend
-            sendAnalytics('generate_lead', { form_id: 'leadForm', intent: submitIntent });
-            sendAnalytics('form_submit', { form_id: 'leadForm', intent: submitIntent });
-
-            setMessage('Заявка отправлена. Свяжемся для обсуждения деталей.', true);
-            form.reset();
-            submitIntent = 'lead';
-          });
-        }
-      });
-    </script>
+    <!-- Main JavaScript -->
+    <script src="js/main.js" defer></script>
   </body>
 </html>
