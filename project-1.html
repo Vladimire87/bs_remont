@@ -82,32 +82,74 @@
       <section class="relative isolate overflow-hidden border-b border-[var(--line)]">
         <!-- Background Image -->
         <div class="absolute inset-0 -z-10">
-          <img
-            src="media/projects/project-1/project-1-main.jpg"
-            alt=""
-            class="h-full w-full object-cover"
-            loading="eager"
-            decoding="async"
-            aria-hidden="true"
-          />
-          <!-- Gradient Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
-          <!-- Additional subtle gradient for better text readability -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+          <div class="absolute inset-0 flex justify-center">
+            <img
+              src="media/projects/project-1/project-1-main.jpg"
+              alt=""
+              class="h-full w-full max-w-4xl object-cover object-center lg:object-[center_30%]"
+              loading="eager"
+              decoding="async"
+              aria-hidden="true"
+            />
+          </div>
+          <!-- Gradient Overlay - stronger for better text contrast -->
+          <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/75"></div>
+          <!-- Additional gradient for text readability at bottom -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30"></div>
         </div>
         
         <!-- Content -->
-        <div class="relative mx-auto max-w-6xl px-4 lg:px-6 py-12 lg:py-16 min-h-[60vh] flex flex-col justify-end">
-          <div class="mb-8">
-            <a href="index.html#portfolio" class="inline-flex items-center gap-2 text-[11px] text-white/80 hover:text-white transition-colors mb-6 backdrop-blur-sm bg-white/5 rounded-full px-3 py-1.5 w-fit">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="relative mx-auto max-w-6xl px-4 lg:px-6 pt-8 pb-12 lg:pt-12 lg:pb-16 min-h-[50vh] max-h-[70vh] lg:max-h-[600px] flex flex-col justify-end">
+          <div class="space-y-4">
+            <!-- Breadcrumbs -->
+            <nav class="mb-2" aria-label="Хлебные крошки">
+              <ol class="flex items-center gap-2 text-[11px] text-white/90 flex-wrap">
+                <li>
+                  <a href="index.html" class="hover:text-white transition-colors text-white/90">Главная</a>
+                </li>
+                <li class="text-white/60" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
+                </li>
+                <li>
+                  <a href="index.html#portfolio" class="hover:text-white transition-colors text-white/90">Проекты</a>
+                </li>
+                <li class="text-white/60" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
+                </li>
+                <li>
+                  <span class="text-white/90">Дизайн-проект</span>
+                </li>
+                <li class="text-white/60" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
+                </li>
+                <li>
+                  <span class="text-white font-medium" aria-current="page">Level Barvikha Residence</span>
+                </li>
+              </ol>
+            </nav>
+
+            <!-- Back Button -->
+            <a href="index.html#portfolio" class="inline-flex items-center gap-2 text-[11px] text-white hover:text-white/80 transition-colors" style="color: white;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
                 <path d="M19 12H5M12 19l-7-7 7-7"/>
               </svg>
-              <span>Назад к портфолио</span>
+              <span style="color: white;">Назад к портфолио</span>
             </a>
-            <div class="text-[10px] uppercase tracking-wider text-white/70 mb-3">Проект</div>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight mb-4 text-white">Дизайн-проект апартаментов</h1>
-            <div class="flex flex-wrap items-center gap-6 text-[11px] text-white/80">
+            
+            <!-- Project Label -->
+            <div class="text-[10px] uppercase tracking-wider text-white/80">Проект</div>
+            
+            <!-- Main Heading -->
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-white drop-shadow-lg">Дизайн-проект апартаментов</h1>
+            
+            <!-- Meta Information -->
+            <div class="flex flex-wrap items-center gap-6 text-[11px] text-white/90">
               <div class="flex items-center gap-2">
                 <span class="uppercase tracking-wider">Level Barvikha Residence</span>
               </div>
