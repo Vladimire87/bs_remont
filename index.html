@@ -365,33 +365,42 @@
         </div>
       </section>
 
-      <!-- ЦИФРЫ И ОТЗЫВЫ -->
+      <!-- ПРЕИМУЩЕСТВА И ОТЗЫВ -->
       <section id="insights" class="border-t border-[var(--line)] bg-[var(--bg-soft)] py-20" aria-labelledby="insights-heading">
         <div class="mx-auto max-w-6xl px-4 lg:px-6">
-          <h2 id="insights-heading" class="visually-hidden">Цифры и отзывы клиентов</h2>
-          <div class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] items-stretch">
-            <div class="rounded-[28px] border border-[var(--line)] bg-[var(--bg-card)] p-8">
-              <p class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Цифры</p>
-              <h3 class="mt-3 text-xl font-semibold">Прозрачные KPI по каждому объекту</h3>
-              <dl class="mt-8 grid gap-6 sm:grid-cols-3 text-sm">
-                <div>
-                  <dt class="text-[11px] text-[var(--muted)]">Средний срок объектов</dt>
-                  <dd class="mt-2 text-2xl font-semibold text-[var(--text)]">5.5 мес</dd>
-                </div>
-                <div>
-                  <dt class="text-[11px] text-[var(--muted)]">Повторные клиенты</dt>
-                  <dd class="mt-2 text-2xl font-semibold text-[var(--text)]">42%</dd>
-                </div>
-                <div>
-                  <dt class="text-[11px] text-[var(--muted)]">Команда на проект</dt>
-                  <dd class="mt-2 text-2xl font-semibold text-[var(--text)]">8 спец.</dd>
-                </div>
-              </dl>
-              <p class="mt-6 text-[12px] text-[var(--muted)]">Инженер по качеству фиксирует замечания в базе, а клиент видит статус сметы и графика работ онлайн. Чеки и спецификации доступны в личном кабинете.</p>
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mb-12">
+            <div class="space-y-3">
+              <p class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Результаты</p>
+              <h2 id="insights-heading" class="text-2xl">Почему с нами работают повторно</h2>
+              <p class="text-[11px] text-[var(--muted)] max-w-2xl">Прозрачный процесс, фиксированные сроки и единая команда, которая ведёт объект от проекта до сдачи.</p>
             </div>
-            <div class="rounded-[28px] border border-[var(--line)] bg-[var(--bg-card)] p-8 flex flex-col gap-6">
-              <p class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Отзывы</p>
-              <blockquote class="text-sm leading-relaxed text-[var(--text)]">
+          </div>
+          <div class="grid gap-8 lg:grid-cols-2 items-stretch">
+            <!-- Левая колонка: Преимущества -->
+            <div class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-8">
+              <div class="grid gap-8 sm:grid-cols-3 mb-8">
+                <div>
+                  <div class="text-2xl font-semibold text-[var(--text)] mb-1">5.5</div>
+                  <p class="text-[11px] text-[var(--muted)]">месяцев средний срок объектов</p>
+                </div>
+                <div>
+                  <div class="text-2xl font-semibold text-[var(--text)] mb-1">42%</div>
+                  <p class="text-[11px] text-[var(--muted)]">повторных клиентов</p>
+                </div>
+                <div>
+                  <div class="text-2xl font-semibold text-[var(--text)] mb-1">8</div>
+                  <p class="text-[11px] text-[var(--muted)]">специалистов на проект</p>
+                </div>
+              </div>
+              <div class="space-y-4 text-[12px] text-[var(--muted)]">
+                <p>Инженер по качеству фиксирует замечания в базе, а клиент видит статус сметы и графика работ в еженедельных отчётах.</p>
+                <p>Чеки и спецификации предоставляются по запросу. Вся коммуникация в едином канале без лишних встреч.</p>
+              </div>
+            </div>
+            <!-- Правая колонка: Отзыв -->
+            <div class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-8 flex flex-col gap-6">
+              <p class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Отзыв клиента</p>
+              <blockquote class="text-sm leading-relaxed text-[var(--text)] flex-1">
                 «Работаем со студией уже второй объект. Команда курирует поставщиков, проверяет чертежи и выдаёт еженедельные отчёты в едином канале, поэтому мы понимаем статус работ без лишних встреч.»
               </blockquote>
               <div class="text-[11px] text-[var(--muted)]">
@@ -442,7 +451,8 @@
             <div class="space-y-4 mb-12">
               <h3 class="text-2xl">Как мы ведём ваш объект от «коробки» до сдачи</h3>
               <p class="text-[12px] text-[var(--muted)] max-w-3xl">
-                Проект, рабочая документация и авторский надзор работают как единая система. Ниже — что вы реально получаете на каждом этапе.
+                Проект, рабочая документация и авторский надзор работают как единая система.<br>
+                Ниже — что вы реально получаете на каждом этапе.
               </p>
             </div>
 
