@@ -156,26 +156,26 @@
               Консультация
             </a>
           </div>
-          <div class="mt-10 grid gap-y-10 gap-x-6 sm:grid-cols-4">
-            <article class="space-y-2 advantage-item">
+          <div class="mt-10 grid gap-y-10 gap-x-6 sm:grid-cols-4 items-stretch">
+            <article class="space-y-2 advantage-item flex flex-col h-full">
               <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Проект</div>
               <h3 class="text-sm font-semibold">Дизайн и рабочая документация</h3>
-              <p class="text-[11px] text-[var(--muted)]">Планировки, 3D-визуализации, подбор материалов и узлы в одной документации.</p>
+              <p class="text-[11px] text-[var(--muted)] flex-1">Планировки, 3D-визуализации, подбор материалов и узлы в одной документации.</p>
             </article>
-            <article class="space-y-2 advantage-item">
+            <article class="space-y-2 advantage-item flex flex-col h-full">
               <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Инженерия</div>
               <h3 class="text-sm font-semibold">Сети и сметы</h3>
-              <p class="text-[11px] text-[var(--muted)]">Электрика, вентиляция, умный дом, расчёт нагрузок и прозрачные бюджеты.</p>
+              <p class="text-[11px] text-[var(--muted)] flex-1">Электрика, вентиляция, умный дом, расчёт нагрузок и прозрачные бюджеты.</p>
             </article>
-            <article class="space-y-2 advantage-item">
+            <article class="space-y-2 advantage-item flex flex-col h-full">
               <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Реализация</div>
               <h3 class="text-sm font-semibold">Строительство и комплектация</h3>
-              <p class="text-[11px] text-[var(--muted)]">Поставки, логистика, контроль качества и персональный прораб на объекте.</p>
+              <p class="text-[11px] text-[var(--muted)] flex-1">Поставки, логистика, контроль качества и персональный прораб на объекте.</p>
             </article>
-            <article class="space-y-2 advantage-item">
+            <article class="space-y-2 advantage-item flex flex-col h-full">
               <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Сервис</div>
               <h3 class="text-sm font-semibold">Сдача и гарантийное сопровождение</h3>
-              <p class="text-[11px] text-[var(--muted)]">Финальная приёмка, чек-листы, инструкции и постгарантийное обслуживание.</p>
+              <p class="text-[11px] text-[var(--muted)] flex-1">Финальная приёмка, чек-листы, инструкции и постгарантийное обслуживание.</p>
             </article>
           </div>
         </div>
@@ -345,14 +345,25 @@
           <div>
             <h2 id="partners-heading" class="text-[10px] uppercase tracking-[0.16em] text-[var(--muted)]">С нами работают</h2>
             <div class="mt-4 grid grid-cols-3 gap-4">
-              <!-- Логотипы девелоперов:
-                   200x80 или SVG, монохром -->
-              <div class="h-14 rounded-xl border border-[var(--line)] bg-[var(--bg-card)] flex items-center justify-center text-[8px] text-[var(--muted)]">Логотип</div>
-              <div class="h-14 rounded-xl border border-[var(--line)] bg-[var(--bg-card)] flex items-center justify-center text-[8px] text-[var(--muted)]">Логотип</div>
-              <div class="h-14 rounded-xl border border-[var(--line)] bg-[var(--bg-card)] flex items-center justify-center text-[8px] text-[var(--muted)]">Логотип</div>
-              <div class="h-14 rounded-xl border border-[var(--line)] bg-[var(--bg-card)] flex items-center justify-center text-[8px] text-[var(--muted)]">Логотип</div>
-              <div class="h-14 rounded-xl border border-[var(--line)] bg-[var(--bg-card)] flex items-center justify-center text-[8px] text-[var(--muted)]">Логотип</div>
-              <div class="h-14 rounded-xl border border-[var(--line)] bg-[var(--bg-card)] flex items-center justify-center text-[8px] text-[var(--muted)]">Логотип</div>
+              <!-- Логотипы топ-6 застройщиков Москвы -->
+              <div class="h-16 rounded-xl border border-[var(--line)] bg-white flex items-center justify-center p-4 hover:border-[var(--accent)] transition-colors overflow-hidden">
+                <img src="logos/pik-logo.jpg" alt="ПИК" class="max-h-10 w-full object-contain opacity-80 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+              </div>
+              <div class="h-16 rounded-xl border border-[var(--line)] bg-white flex items-center justify-center p-4 hover:border-[var(--accent)] transition-colors overflow-hidden">
+                <img src="logos/samolet-logo.png" alt="Самолёт" class="max-h-10 w-full object-contain opacity-80 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+              </div>
+              <div class="h-16 rounded-xl border border-[var(--line)] bg-white flex items-center justify-center p-4 hover:border-[var(--accent)] transition-colors overflow-hidden">
+                <img src="logos/ingrad-logo.png" alt="ИНГРАД" class="max-h-10 w-full object-contain opacity-80 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+              </div>
+              <div class="h-16 rounded-xl border border-[var(--line)] bg-white flex items-center justify-center p-4 hover:border-[var(--accent)] transition-colors overflow-hidden">
+                <img src="logos/fsk-logo.png" alt="ФСК" class="max-h-10 w-full object-contain opacity-80 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+              </div>
+              <div class="h-16 rounded-xl border border-[var(--line)] bg-white flex items-center justify-center p-4 hover:border-[var(--accent)] transition-colors overflow-hidden">
+                <img src="logos/lsr-logo.png" alt="ЛСР" class="max-h-10 w-full object-contain opacity-80 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+              </div>
+              <div class="h-16 rounded-xl border border-[var(--line)] bg-white flex items-center justify-center p-4 hover:border-[var(--accent)] transition-colors overflow-hidden">
+                <img src="logos/etalon-logo.png" alt="Эталон" class="max-h-10 w-full object-contain opacity-80 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" />
+              </div>
             </div>
           </div>
           <!-- Отзывы -->
