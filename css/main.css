@@ -126,13 +126,8 @@ button {
 }
 
 .card-hover {
-  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent);
-  box-shadow: 0 20px 45px rgba(18, 18, 18, 0.12);
+  transition: border-color 300ms ease;
+  /* Transform and box-shadow are handled by GSAP for smoother animations */
 }
 
 .footer-shell {
@@ -236,6 +231,15 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center center;
+}
+
+/* Ensure images fill containers without gaps */
+.card-hover img,
+article img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (min-width: 1280px) {

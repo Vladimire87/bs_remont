@@ -21,6 +21,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!-- Google Fonts: Inter and Manrope with Cyrillic support -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -120,7 +125,7 @@
               <div class="space-y-10 lg:max-w-3xl">
                 <div class="space-y-4">
                   <p class="text-[11px] uppercase tracking-[0.32em] text-white/70">Premium · Remont</p>
-                  <h1 id="hero-title" class="text-3xl sm:text-[42px] lg:text-[52px] leading-[1.12] font-semibold">
+                  <h1 id="hero-title" class="text-3xl sm:text-[42px] lg:text-[52px] leading-[1.12] font-semibold break-words">
                     Ремонт и отделка квартир бизнес- и премиум-класса под ключ.
                   </h1>
                   <p class="text-base sm:text-lg text-white/85 max-w-2xl">
@@ -143,7 +148,7 @@
       </section>
 
       <!-- УСЛУГИ -->
-      <section id="services" class="border-y border-[var(--line)] bg-[var(--bg-soft)] py-16" aria-labelledby="services-heading">
+      <section id="services" class="border-y border-[var(--line)] bg-[var(--bg-soft)] py-16" aria-labelledby="services-heading" data-aos="fade-up">
         <div class="mx-auto max-w-6xl px-4 lg:px-6">
           <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div class="space-y-3">
@@ -159,22 +164,22 @@
             </a>
           </div>
           <div class="mt-10 grid gap-y-10 gap-x-6 sm:grid-cols-4 items-stretch">
-            <article class="advantage-item flex flex-col h-full">
+            <article class="advantage-item flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
               <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase mb-2">Проект</div>
               <h3 class="text-sm font-semibold mb-2 min-h-[2.5em] leading-tight">Дизайн и рабочая документация</h3>
               <p class="text-[11px] text-[var(--muted)] flex-1 mt-auto">Планировки, 3D-визуализации, подбор материалов и узлы в одной документации.</p>
             </article>
-            <article class="advantage-item flex flex-col h-full">
+            <article class="advantage-item flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
               <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase mb-2">Инженерия</div>
               <h3 class="text-sm font-semibold mb-2 min-h-[2.5em] leading-tight">Сети и сметы</h3>
               <p class="text-[11px] text-[var(--muted)] flex-1 mt-auto">Электрика, вентиляция, умный дом, расчёт нагрузок и прозрачные бюджеты.</p>
             </article>
-            <article class="advantage-item flex flex-col h-full">
+            <article class="advantage-item flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
               <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase mb-2">Реализация</div>
               <h3 class="text-sm font-semibold mb-2 min-h-[2.5em] leading-tight">Строительство и комплектация</h3>
               <p class="text-[11px] text-[var(--muted)] flex-1 mt-auto">Поставки, логистика, контроль качества и персональный прораб на объекте.</p>
             </article>
-            <article class="advantage-item flex flex-col h-full">
+            <article class="advantage-item flex flex-col h-full" data-aos="fade-up" data-aos-delay="400">
               <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase mb-2">Сервис</div>
               <h3 class="text-sm font-semibold mb-2 min-h-[2.5em] leading-tight">Сдача и гарантийное сопровождение</h3>
               <p class="text-[11px] text-[var(--muted)] flex-1 mt-auto">Финальная приёмка, чек-листы, инструкции и постгарантийное обслуживание.</p>
@@ -184,18 +189,18 @@
       </section>
 
       <!-- НОВОСТРОЙКА БЕЗ ОТДЕЛКИ -->
-      <section id="newbuild" class="border-y border-[var(--line)] bg-[var(--bg-soft)] py-20" aria-labelledby="newbuild-heading">
+      <section id="newbuild" class="border-y border-[var(--line)] bg-[var(--bg-soft)] py-20" aria-labelledby="newbuild-heading" data-aos="fade-up">
         <div class="mx-auto max-w-6xl px-4 lg:px-6">
           <h2 id="newbuild-heading" class="text-2xl mb-12">Новостройка без отделки: зачем нужен проект</h2>
           
           <div class="grid gap-8 lg:grid-cols-2 mb-12">
             <!-- Левая колонка: Без проекта -->
-            <div class="group flex flex-col rounded-2xl bg-[var(--bg-card)] shadow-sm overflow-hidden card-hover">
+            <div class="group flex flex-col rounded-2xl bg-[var(--bg-card)] shadow-sm overflow-hidden card-hover" data-aos="fade-right">
               <div class="relative overflow-hidden aspect-[3/2] bg-[var(--line)]">
                 <img
                   src="media/badplaning1.jpg"
                   alt="Пустая новостройка без отделки: серые стены, стояк, голый бетон"
-                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  class="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-110"
                   loading="lazy"
                   decoding="async"
                 />
@@ -224,12 +229,12 @@
             </div>
 
             <!-- Правая колонка: С проектом и авторским надзором -->
-            <div class="group flex flex-col rounded-2xl bg-[var(--bg-card)] shadow-sm overflow-hidden card-hover">
+            <div class="group flex flex-col rounded-2xl bg-[var(--bg-card)] shadow-sm overflow-hidden card-hover" data-aos="fade-left">
               <div class="relative overflow-hidden aspect-[3/2] bg-[var(--line)]">
                 <img
                   src="media/nadzor.jpg"
                   alt="Готовый интерьер из реализованного проекта"
-                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  class="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-110"
                   loading="lazy"
                   decoding="async"
                 />
@@ -270,17 +275,17 @@
             </div>
           </div>
           <div class="mt-10 grid gap-y-10 gap-x-6 sm:grid-cols-3 items-stretch">
-            <article class="space-y-2 advantage-item flex flex-col h-full">
+            <article class="space-y-2 advantage-item flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
               <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Этап 1</div>
               <h4 class="text-sm font-semibold">Проект</h4>
               <p class="text-[11px] text-[var(--muted)] flex-1">Планировки, визуализации, подбор материалов и техническое задание. Формируем понятное ТЗ, по которому работает вся команда.</p>
             </article>
-            <article class="space-y-2 advantage-item flex flex-col h-full">
+            <article class="space-y-2 advantage-item flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
               <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Этап 2</div>
               <h4 class="text-sm font-semibold">Рабочая документация</h4>
               <p class="text-[11px] text-[var(--muted)] flex-1">Полный комплект чертежей для строителей: стены, потолки, электрика, сантехника. Строители работают по чертежам, а не по догадкам.</p>
             </article>
-            <article class="space-y-2 advantage-item flex flex-col h-full">
+            <article class="space-y-2 advantage-item flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
               <div class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Этап 3</div>
               <h4 class="text-sm font-semibold">Реализация и надзор</h4>
               <p class="text-[11px] text-[var(--muted)] flex-1">Авторский надзор на объекте, контроль качества работ и соответствия проекту. Защита ваших интересов на стройке.</p>
@@ -290,7 +295,7 @@
       </section>
 
       <!-- ПОРТФОЛИО (Срез) -->
-      <section id="portfolio" class="py-20" aria-labelledby="portfolio-heading">
+      <section id="portfolio" class="py-20" aria-labelledby="portfolio-heading" data-aos="fade-up">
         <div class="mx-auto max-w-6xl px-4 lg:px-6">
           <div class="flex items-end justify-between gap-4">
             <h2 id="portfolio-heading" class="text-2xl">Реализованные проекты</h2>
@@ -298,14 +303,14 @@
           </div>
           <div class="mt-8 grid gap-8 sm:grid-cols-3">
             <!-- Карточка 1 -->
-            <a href="projects/project-1.html" class="group flex h-full flex-col rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] shadow-sm card-hover overflow-hidden">
+            <a href="projects/project-1.html" class="group flex h-full flex-col rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] shadow-sm card-hover overflow-hidden" data-aos="zoom-in" data-aos-delay="100">
               <div class="relative overflow-hidden aspect-[3/2] bg-[var(--line)]">
                 <img
                   src="media/projects/project-1/project-1-main.webp"
                   alt="Дизайн-проект апартаментов Level Barvikha Residence"
                   width="900"
                   height="600"
-                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  class="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-110"
                   loading="lazy"
                   decoding="async"
                 />
@@ -322,14 +327,14 @@
             </a>
 
             <!-- Карточка 2 -->
-            <a href="projects/project-2.html" class="group flex h-full flex-col rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] shadow-sm card-hover overflow-hidden">
+            <a href="projects/project-2.html" class="group flex h-full flex-col rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] shadow-sm card-hover overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
               <div class="relative overflow-hidden aspect-[3/2] bg-[var(--line)]">
                 <img
                   src="media/projects/projects-2/heroproject-2.webp"
                   alt="Дизайн-проект квартиры, Малый Кисловский переулок, д.3"
                   width="900"
                   height="600"
-                  class="w-full h-full object-cover scale-[1.15] transition-transform duration-500 ease-out group-hover:scale-[1.2]"
+                  class="w-full h-full object-cover object-center scale-105 transition-transform duration-500 ease-out group-hover:scale-110"
                   loading="lazy"
                   decoding="async"
                 />
@@ -346,14 +351,14 @@
             </a>
 
             <!-- Карточка 3 -->
-            <article class="group flex h-full flex-col rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] shadow-sm card-hover overflow-hidden">
+            <article class="group flex h-full flex-col rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] shadow-sm card-hover overflow-hidden" data-aos="zoom-in" data-aos-delay="300">
               <div class="relative overflow-hidden aspect-[3/2] bg-[var(--line)]">
                 <img
                   src="https://placehold.co/900x600"
                   alt="Спальня в тёплом современном стиле"
                   width="900"
                   height="600"
-                  class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  class="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-110"
                   loading="lazy"
                   decoding="async"
                 />
@@ -373,7 +378,7 @@
       </section>
 
       <!-- ПРЕИМУЩЕСТВА И ОТЗЫВ -->
-      <section id="insights" class="border-t border-[var(--line)] bg-[var(--bg-soft)] py-20" aria-labelledby="insights-heading">
+      <section id="insights" class="border-t border-[var(--line)] bg-[var(--bg-soft)] py-20" aria-labelledby="insights-heading" data-aos="fade-up">
         <div class="mx-auto max-w-6xl px-4 lg:px-6">
           <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between mb-12">
             <div class="space-y-3">
@@ -431,7 +436,7 @@
       </section>
 
       <!-- ПРОЦЕСС -->
-      <section id="process" class="border-y border-[var(--line)] bg-[var(--bg-soft)] py-20" aria-labelledby="process-heading">
+      <section id="process" class="border-y border-[var(--line)] bg-[var(--bg-soft)] py-20" aria-labelledby="process-heading" data-aos="fade-up">
         <div class="mx-auto max-w-6xl px-4 lg:px-6">
           <h2 id="process-heading" class="text-2xl">Процесс работы</h2>
           <ol class="mt-12 grid gap-8 sm:grid-cols-5 text-[12px] text-[var(--muted)]">
@@ -474,7 +479,7 @@
 
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               <!-- Этап 1: Погружение и стратегия -->
-              <article class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-6 space-y-3">
+              <article class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-6 space-y-3" data-aos="fade-up" data-aos-delay="100">
                 <h4 class="text-sm font-semibold text-[var(--text)]">Погружение и стратегия</h4>
                 <p class="text-[11px] text-[var(--muted)] leading-relaxed">
                   Анкета образа жизни, стилевой вектор, формирование технического задания. Фиксируем все требования и ограничения.
@@ -486,7 +491,7 @@
               </article>
 
               <!-- Этап 2: Планировочные решения -->
-              <article class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-6 space-y-3">
+              <article class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-6 space-y-3" data-aos="fade-up" data-aos-delay="200">
                 <h4 class="text-sm font-semibold text-[var(--text)]">Планировочные решения</h4>
                 <p class="text-[11px] text-[var(--muted)] leading-relaxed">
                   Зонирование на общественную, приватную и хозяйственную части.<br>
@@ -499,7 +504,7 @@
               </article>
 
               <!-- Этап 3: Рабочая документация -->
-              <article class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-6 space-y-3">
+              <article class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-6 space-y-3" data-aos="fade-up" data-aos-delay="300">
                 <h4 class="text-sm font-semibold text-[var(--text)]">Рабочая документация</h4>
                 <p class="text-[11px] text-[var(--muted)] leading-relaxed">
                   Планы демонтажа и монтажа, потолков, освещения, розеток, электрики, полов.<br>
@@ -512,7 +517,7 @@
               </article>
 
               <!-- Этап 4: Визуализация и подбор материалов -->
-              <article class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-6 space-y-3">
+              <article class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-6 space-y-3" data-aos="fade-up" data-aos-delay="400">
                 <h4 class="text-sm font-semibold text-[var(--text)]">Визуализация и подбор материалов</h4>
                 <p class="text-[11px] text-[var(--muted)] leading-relaxed">
                   3D-визуализации ключевых помещений.<br>
@@ -525,7 +530,7 @@
               </article>
 
               <!-- Этап 5: Авторский надзор -->
-              <article class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-6 space-y-3 sm:col-span-2 lg:col-span-1">
+              <article class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-6 space-y-3 sm:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="500">
                 <h4 class="text-sm font-semibold text-[var(--text)]">Авторский надзор</h4>
                 <p class="text-[11px] text-[var(--muted)] leading-relaxed">
                   Регулярные выезды на объект. Контроль соответствия работ проекту. Оперативные решения по возникающим техническим вопросам. Коммуникация с прорабом и подрядчиками.
@@ -541,7 +546,7 @@
       </section>
 
       <!-- ДОВЕРИЕ -->
-      <section id="partners" class="border-t border-[var(--line)] bg-[var(--bg-soft)] py-20" aria-labelledby="partners-heading">
+      <section id="partners" class="border-t border-[var(--line)] bg-[var(--bg-soft)] py-20" aria-labelledby="partners-heading" data-aos="fade-up">
         <div class="mx-auto max-w-6xl px-4 lg:px-6">
           <div class="space-y-3 mb-12">
             <p class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">С нами работают</p>
@@ -691,6 +696,8 @@
     </main>
 
     <!-- Main JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
   </body>
 </html>
