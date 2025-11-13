@@ -31,6 +31,18 @@ const initAnimations = () => {
     const img = card.querySelector('img');
     const cardContent = card.querySelector('div:last-child');
     
+    // Check if image is in aspect-ratio container
+    const parent = img?.parentElement;
+    const isAspectImage = parent && (
+      parent.className.includes('aspect-[3/2]') || 
+      parent.className.includes('aspect-[4/3]')
+    );
+    
+    // Set initial scale for images to prevent gaps
+    if (isAspectImage) {
+      gsap.set(img, { scale: 1.2 });
+    }
+    
     // Hover animation
     card.addEventListener('mouseenter', () => {
       gsap.to(card, {
@@ -43,8 +55,9 @@ const initAnimations = () => {
       });
       
       if (img) {
+        const baseScale = isAspectImage ? 1.2 : 1;
         gsap.to(img, {
-          scale: 1.1,
+          scale: baseScale * 1.1,
           duration: 0.6,
           ease: 'power2.out'
         });
@@ -70,8 +83,9 @@ const initAnimations = () => {
       });
       
       if (img) {
+        const baseScale = isAspectImage ? 1.2 : 1;
         gsap.to(img, {
-          scale: 1,
+          scale: baseScale,
           duration: 0.6,
           ease: 'power2.out'
         });

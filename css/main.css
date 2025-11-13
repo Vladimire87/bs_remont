@@ -236,10 +236,26 @@ button {
 /* Ensure images fill containers without gaps */
 .card-hover img,
 article img {
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
+  display: block;
+}
+
+/* Ensure aspect-ratio containers properly contain images */
+.aspect-\[3\/2\],
+.aspect-\[4\/3\] {
+  position: relative;
+}
+
+.aspect-\[3\/2\] img,
+.aspect-\[4\/3\] img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 @media (min-width: 1280px) {
