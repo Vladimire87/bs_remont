@@ -577,49 +577,60 @@
       </section>
 
       <!-- ЛИД-ФОРМА -->
-      <section id="lead" class="py-20" aria-labelledby="lead-heading">
+      <section id="lead" class="border-y border-[var(--line)] bg-[var(--bg-soft)] py-20" aria-labelledby="lead-heading" data-aos="fade-up">
         <div class="mx-auto max-w-3xl px-4 lg:px-6">
-          <h2 id="lead-heading" class="text-2xl">Обсудить ваш проект</h2>
-          <p class="mt-2 text-[11px] text-[var(--muted)]">Оставьте контакты, прикрепите планировку или укажите ЖК. Ответим с предварительными рамками по срокам и бюджету.</p>
-          <form id="leadForm" class="mt-8 grid gap-5 sm:grid-cols-2 text-[12px]" novalidate aria-describedby="formMessage">
-            <div>
-              <label for="name" class="block">Имя</label>
-              <input id="name" name="name" required autocomplete="name" class="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--bg-card)] px-3 py-2 focus-ring" />
-            </div>
-            <div>
-              <label for="phone" class="block">Телефон</label>
-              <input id="phone" name="phone" inputmode="tel" autocomplete="tel" required class="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--bg-card)] px-3 py-2 focus-ring" />
-            </div>
-            <div>
-              <label for="type" class="block">Тип объекта</label>
-              <select id="type" name="type" class="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--bg-card)] px-3 py-2 focus-ring">
-                <option>Квартира</option>
-                <option>Пентхаус</option>
-                <option>Таунхаус</option>
-              </select>
-            </div>
-            <div>
-              <label for="area" class="block">Площадь, м²</label>
-              <input id="area" name="area" inputmode="numeric" autocomplete="off" class="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--bg-card)] px-3 py-2 focus-ring" />
-            </div>
-            <div class="sm:col-span-2">
-              <label for="time" class="block">Удобное время звонка</label>
-              <input id="time" name="time" autocomplete="off" class="mt-2 w-full rounded-xl border border-[var(--line)] bg-[var(--bg-card)] px-3 py-2 focus-ring" />
-            </div>
-            <div class="sm:col-span-2 flex items-center gap-3">
-              <input id="agree" name="agree" type="checkbox" required class="h-4 w-4 rounded border-[var(--line)] bg-[var(--bg-card)] focus-ring" />
-              <label for="agree" class="text-[11px] text-[var(--muted)]">Согласен на обработку персональных данных</label>
-            </div>
-            <div class="sm:col-span-2 flex flex-wrap gap-4">
-              <button type="submit" class="cta cta--primary inline-flex items-center justify-center px-7 py-3">
-                Отправить заявку
-              </button>
-              <button type="button" id="btnKP" class="cta cta--ghost inline-flex items-center justify-center px-7 py-3">
-                Получить КП
-              </button>
-            </div>
-            <p id="formMessage" class="sm:col-span-2 text-[11px] text-[var(--muted)]" role="status" aria-live="polite"></p>
-          </form>
+          <div class="space-y-3 mb-8">
+            <p class="text-[9px] font-medium tracking-[0.18em] text-[var(--muted)] uppercase">Консультация</p>
+            <h2 id="lead-heading" class="text-2xl">Обсудить ваш проект</h2>
+            <p class="text-[11px] text-[var(--muted)] max-w-2xl">
+              Оставьте контакты и укажите параметры объекта.<br>
+              Ответим с предварительными рамками по срокам и бюджету.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-8">
+            <form id="leadForm" class="grid gap-5 sm:grid-cols-2 text-[12px]" novalidate aria-describedby="formMessage">
+              <div>
+                <label for="name" class="block text-[11px] text-[var(--muted)] mb-1.5">Имя</label>
+                <input id="name" name="name" required autocomplete="name" class="w-full rounded-xl border border-[var(--line)] bg-[var(--bg-soft)] px-4 py-2.5 text-[12px] focus:border-[var(--accent)] focus:outline-none transition-colors" />
+              </div>
+              <div>
+                <label for="phone" class="block text-[11px] text-[var(--muted)] mb-1.5">Телефон</label>
+                <input id="phone" name="phone" inputmode="tel" autocomplete="tel" required class="w-full rounded-xl border border-[var(--line)] bg-[var(--bg-soft)] px-4 py-2.5 text-[12px] focus:border-[var(--accent)] focus:outline-none transition-colors" />
+              </div>
+              <div>
+                <label for="type" class="block text-[11px] text-[var(--muted)] mb-1.5">Тип объекта</label>
+                <select id="type" name="type" class="w-full rounded-xl border border-[var(--line)] bg-[var(--bg-soft)] px-4 py-2.5 text-[12px] focus:border-[var(--accent)] focus:outline-none transition-colors">
+                  <option value="">Выберите тип объекта</option>
+                  <option>Квартира</option>
+                  <option>Пентхаус</option>
+                  <option>Апартаменты</option>
+                  <option>Таунхаус</option>
+                  <option>Дом / Коттедж</option>
+                </select>
+              </div>
+              <div>
+                <label for="area" class="block text-[11px] text-[var(--muted)] mb-1.5">Площадь, м²</label>
+                <input id="area" name="area" inputmode="numeric" autocomplete="off" class="w-full rounded-xl border border-[var(--line)] bg-[var(--bg-soft)] px-4 py-2.5 text-[12px] focus:border-[var(--accent)] focus:outline-none transition-colors" />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="time" class="block text-[11px] text-[var(--muted)] mb-1.5">Удобное время звонка</label>
+                <input id="time" name="time" autocomplete="off" class="w-full rounded-xl border border-[var(--line)] bg-[var(--bg-soft)] px-4 py-2.5 text-[12px] focus:border-[var(--accent)] focus:outline-none transition-colors" />
+              </div>
+              <div class="sm:col-span-2 flex items-start gap-3 pt-2">
+                <input id="agree" name="agree" type="checkbox" required class="mt-0.5 h-4 w-4 rounded border-[var(--line)] bg-[var(--bg-soft)] text-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-0" />
+                <label for="agree" class="text-[11px] text-[var(--muted)] leading-relaxed">Согласен на обработку персональных данных</label>
+              </div>
+              <div class="sm:col-span-2 flex flex-wrap gap-4 pt-2">
+                <button type="submit" class="cta cta--primary inline-flex items-center justify-center px-7 py-3">
+                  Отправить заявку
+                </button>
+                <button type="button" id="btnKP" class="cta cta--ghost inline-flex items-center justify-center px-7 py-3">
+                  Получить КП
+                </button>
+              </div>
+              <p id="formMessage" class="sm:col-span-2 text-[11px] text-[var(--muted)]" role="status" aria-live="polite"></p>
+            </form>
+          </div>
         </div>
       </section>
 
