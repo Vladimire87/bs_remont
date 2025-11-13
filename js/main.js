@@ -12,6 +12,11 @@ const onReady = (callback) => {
 };
 
 onReady(() => {
+  // Initialize Lucide Icons
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+  
   const $ = (id) => document.getElementById(id);
 
   // Mobile menu toggle

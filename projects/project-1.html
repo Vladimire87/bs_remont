@@ -6,18 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Дизайн-проект апартаментов · Level Barvikha Residence · PremiumRemont</title>
     <meta name="description" content="Дизайн-проект апартаментов в Level Barvikha Residence. 90.1 м²." />
-    <link rel="canonical" href="https://example.com/project-1.html" />
+    <link rel="canonical" href="https://example.com/projects/project-1.html" />
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Дизайн-проект апартаментов · Level Barvikha Residence" />
     <meta property="og:description" content="Дизайн-проект апартаментов в Level Barvikha Residence. 90.1 м²." />
-    <meta property="og:url" content="https://example.com/project-1.html" />
-    <meta property="og:image" content="https://example.com/media/project-1-900x600.jpg" />
+    <meta property="og:url" content="https://example.com/projects/project-1.html" />
+    <meta property="og:image" content="https://example.com/media/projects/project-1/project-1-main.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- External Resources -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- GLightbox for gallery -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <!-- Initialize Lucide Icons immediately after load -->
+    <script>
+      // Initialize Lucide Icons as soon as lucide is available
+      (function() {
+        function initLucide() {
+          if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') {
+            lucide.createIcons();
+          } else {
+            setTimeout(initLucide, 50);
+          }
+        }
+        // Try immediately if already loaded
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initLucide);
+        } else {
+          initLucide();
+        }
+      })();
+    </script>
 
     <!-- Google Fonts: Inter and Manrope with Cyrillic support -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,26 +49,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
   </head>
 
   <body class="h-full bg-[var(--bg)] text-[var(--text)] antialiased selection:bg-[var(--accent-soft)] selection:text-[var(--text)]">
     <!-- HEADER -->
     <header class="fixed inset-x-0 top-0 z-50 border-b border-[var(--line)] bg-[color:rgba(255,255,255,0.96)] backdrop-blur">
       <div class="mx-auto max-w-6xl px-4 lg:px-6 h-16 flex items-center justify-between">
-        <a href="index.html" class="text-sm font-semibold tracking-[0.16em] uppercase text-[#202020] focus-ring">
+        <a href="../index.html" class="text-sm font-semibold tracking-[0.16em] uppercase text-[#202020] focus-ring">
           PremiumRemont
         </a>
         <nav aria-label="Главное меню" class="hidden md:block">
           <ul class="flex gap-7 text-xs text-[var(--muted)]">
-            <li><a href="index.html#portfolio" class="hover:text-[var(--text)] focus-ring">Портфолио</a></li>
-            <li><a href="index.html#services" class="hover:text-[var(--text)] focus-ring">Услуги</a></li>
-            <li><a href="index.html#process" class="hover:text-[var(--text)] focus-ring">Процесс</a></li>
-            <li><a href="index.html#team" class="hover:text-[var(--text)] focus-ring">Команда</a></li>
-            <li><a href="index.html#contacts" class="hover:text-[var(--text)] focus-ring">Контакты</a></li>
+            <li><a href="../index.html#portfolio" class="hover:text-[var(--text)] focus-ring">Портфолио</a></li>
+            <li><a href="../index.html#services" class="hover:text-[var(--text)] focus-ring">Услуги</a></li>
+            <li><a href="../index.html#process" class="hover:text-[var(--text)] focus-ring">Процесс</a></li>
+            <li><a href="../index.html#team" class="hover:text-[var(--text)] focus-ring">Команда</a></li>
+            <li><a href="../index.html#contacts" class="hover:text-[var(--text)] focus-ring">Контакты</a></li>
           </ul>
         </nav>
-        <a href="index.html#lead" class="cta cta--primary hidden md:inline-flex items-center justify-center px-5 py-2.5">
+        <a href="../index.html#lead" class="cta cta--primary hidden md:inline-flex items-center justify-center px-5 py-2.5">
           Обсудить проект
         </a>
         <button
@@ -55,7 +79,7 @@
           aria-expanded="false"
           aria-controls="mobileNav"
         >
-          <svg width="22" height="22" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h16M3 11h16M3 16h12"/></svg>
+          <i data-lucide="menu" class="w-[22px] h-[22px]"></i>
         </button>
       </div>
       <nav
@@ -65,29 +89,80 @@
         hidden
       >
         <ul class="mx-auto max-w-6xl px-4 py-3 space-y-2 text-xs text-[var(--muted)]">
-          <li><a href="index.html#portfolio" class="block py-1 hover:text-[var(--text)]">Портфолио</a></li>
-          <li><a href="index.html#services" class="block py-1 hover:text-[var(--text)]">Услуги</a></li>
-          <li><a href="index.html#process" class="block py-1 hover:text-[var(--text)]">Процесс</a></li>
-          <li><a href="index.html#team" class="block py-1 hover:text-[var(--text)]">Команда</a></li>
-          <li><a href="index.html#contacts" class="block py-1 hover:text-[var(--text)]">Контакты</a></li>
+          <li><a href="../index.html#portfolio" class="block py-1 hover:text-[var(--text)]">Портфолио</a></li>
+          <li><a href="../index.html#services" class="block py-1 hover:text-[var(--text)]">Услуги</a></li>
+          <li><a href="../index.html#process" class="block py-1 hover:text-[var(--text)]">Процесс</a></li>
+          <li><a href="../index.html#team" class="block py-1 hover:text-[var(--text)]">Команда</a></li>
+          <li><a href="../index.html#contacts" class="block py-1 hover:text-[var(--text)]">Контакты</a></li>
         </ul>
       </nav>
     </header>
 
     <main class="pt-16">
       <!-- PROJECT HERO -->
-      <section class="relative isolate overflow-hidden bg-[var(--bg-soft)] border-b border-[var(--line)]">
-        <div class="mx-auto max-w-6xl px-4 lg:px-6 py-12 lg:py-16">
-          <div class="mb-8">
-            <a href="index.html#portfolio" class="inline-flex items-center gap-2 text-[11px] text-[var(--muted)] hover:text-[var(--text)] transition-colors mb-6">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M19 12H5M12 19l-7-7 7-7"/>
-              </svg>
-              <span>Назад к портфолио</span>
+      <section class="relative isolate overflow-hidden border-b border-[var(--line)]">
+        <!-- Background Image -->
+        <div class="absolute inset-0 -z-10">
+          <div class="absolute inset-0 flex justify-center">
+            <img
+              src="../media/projects/project-1/project-1-main.jpg"
+              alt=""
+              class="h-full w-full max-w-4xl object-cover object-center lg:object-[center_30%]"
+              loading="eager"
+              decoding="async"
+              aria-hidden="true"
+            />
+          </div>
+          <!-- Gradient Overlay - stronger for better text contrast -->
+          <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/75"></div>
+          <!-- Additional gradient for text readability at bottom -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/30"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="relative mx-auto max-w-6xl px-4 lg:px-6 pt-8 pb-12 lg:pt-12 lg:pb-16 min-h-[50vh] max-h-[70vh] lg:max-h-[600px] flex flex-col justify-end">
+          <div class="space-y-4">
+            <!-- Breadcrumbs -->
+            <nav class="mb-2" aria-label="Хлебные крошки">
+              <ol class="flex items-center gap-2 text-[11px] text-white/90 flex-wrap">
+                <li>
+                  <a href="../index.html" class="hover:text-white transition-colors text-white/90">Главная</a>
+                </li>
+                <li class="text-white/60" aria-hidden="true">
+                  <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                </li>
+                <li>
+                  <a href="../index.html#portfolio" class="hover:text-white transition-colors text-white/90">Проекты</a>
+                </li>
+                <li class="text-white/60" aria-hidden="true">
+                  <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                </li>
+                <li>
+                  <span class="text-white/90">Дизайн-проект</span>
+                </li>
+                <li class="text-white/60" aria-hidden="true">
+                  <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                </li>
+                <li>
+                  <span class="text-white font-medium" aria-current="page">Level Barvikha Residence</span>
+                </li>
+              </ol>
+            </nav>
+
+            <!-- Back Button -->
+            <a href="../index.html#portfolio" class="inline-flex items-center gap-2 text-[11px] text-white hover:text-white/80 transition-colors" style="color: white;">
+              <i data-lucide="arrow-left" class="w-4 h-4" style="color: white;"></i>
+              <span style="color: white;">Назад к портфолио</span>
             </a>
-            <div class="text-[10px] uppercase tracking-wider text-[var(--muted)] mb-3">Проект</div>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight mb-4">Дизайн-проект апартаментов</h1>
-            <div class="flex flex-wrap items-center gap-6 text-[11px] text-[var(--muted)]">
+            
+            <!-- Project Label -->
+            <div class="text-[10px] uppercase tracking-wider text-white/80">Проект</div>
+            
+            <!-- Main Heading -->
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight text-white drop-shadow-lg">Дизайн-проект апартаментов</h1>
+            
+            <!-- Meta Information -->
+            <div class="flex flex-wrap items-center gap-6 text-[11px] text-white/90">
               <div class="flex items-center gap-2">
                 <span class="uppercase tracking-wider">Level Barvikha Residence</span>
               </div>
@@ -103,8 +178,9 @@
       <section class="py-10 lg:py-12 border-b border-[var(--line)]">
         <div class="mx-auto max-w-6xl px-4 lg:px-6">
           <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-10">
-            <!-- Left Column: Description -->
+            <!-- Left Column: О проекте и План -->
             <div class="space-y-6">
+              <!-- О проекте -->
               <div>
                 <h2 class="text-lg font-semibold mb-3">О проекте</h2>
                 <div class="space-y-3 text-[12px] leading-relaxed text-[var(--text)]">
@@ -123,6 +199,7 @@
                 </div>
               </div>
 
+              <!-- Планировка и План -->
               <div>
                 <h3 class="text-xs font-semibold mb-3 uppercase tracking-wider text-[var(--muted)]">Планировка</h3>
                 <ul class="space-y-1.5 text-[12px] text-[var(--text)] mb-4">
@@ -149,7 +226,7 @@
                 </ul>
                 <div class="rounded-xl border border-[var(--line)] bg-[var(--bg-card)] p-4 overflow-hidden">
                   <img
-                    src="media/plan.png"
+                    src="../media/projects/project-1/plan.png"
                     alt="План квартиры с расстановкой мебели"
                     class="w-full h-auto object-contain"
                     loading="lazy"
@@ -158,7 +235,7 @@
               </div>
             </div>
 
-            <!-- Right Column: Project Details -->
+            <!-- Right Column: Характеристики и остальные блоки -->
             <div class="space-y-6">
               <div class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-5">
                 <h3 class="text-xs font-semibold mb-4 uppercase tracking-wider text-[var(--muted)]">Характеристики</h3>
@@ -185,48 +262,32 @@
               <div class="rounded-2xl border border-[var(--line)] bg-[var(--bg-card)] p-5">
                 <h3 class="text-xs font-semibold mb-3 uppercase tracking-wider text-[var(--muted)]">Состав проекта</h3>
                 <ul class="space-y-2.5 text-[12px] text-[var(--text)]">
-                  <li class="flex items-center gap-2.5">
-                    <svg class="w-4 h-4 text-[var(--accent)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                    </svg>
+                  <li class="flex items-center gap-3">
+                    <i data-lucide="ruler" class="w-5 h-5 text-[var(--accent)] flex-shrink-0"></i>
                     <span>Обмеры; демонтаж/возведение перегородок</span>
                   </li>
                   <li class="flex items-center gap-3">
-                    <svg class="w-5 h-5 text-[var(--accent)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
-                    </svg>
+                    <i data-lucide="layout-dashboard" class="w-5 h-5 text-[var(--accent)] flex-shrink-0"></i>
                     <span>Планировка и расстановка мебели</span>
                   </li>
                   <li class="flex items-center gap-3">
-                    <svg class="w-5 h-5 text-[var(--accent)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 0 1 0 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 0 1 0-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281Z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    </svg>
+                    <i data-lucide="layers" class="w-5 h-5 text-[var(--accent)] flex-shrink-0"></i>
                     <span>Планы полов, плинтусов, теплые полы</span>
                   </li>
                   <li class="flex items-center gap-3">
-                    <svg class="w-5 h-5 text-[var(--accent)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25a1.125 1.125 0 0 1 1.125-1.125h3.75m9 0h-3.375c-.621 0-1.125.504-1.125 1.125v3.375c0 .621.504 1.125 1.125 1.125h3.75m-9 0V8.25m0 0h3.75m-3.75 0h3.375c.621 0 1.125.504 1.125 1.125v3.375c0 .621-.504 1.125-1.125 1.125h-3.75m9 0v-3.375c0-.621.504-1.125 1.125-1.125h3.375c.621 0 1.125.504 1.125 1.125v3.375c0 .621-.504 1.125-1.125 1.125h-3.75" />
-                    </svg>
+                    <i data-lucide="panel-top" class="w-5 h-5 text-[var(--accent)] flex-shrink-0"></i>
                     <span>Потолки с отметками, карнизами и нишами</span>
                   </li>
                   <li class="flex items-center gap-3">
-                    <svg class="w-5 h-5 text-[var(--accent)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    </svg>
+                    <i data-lucide="zap" class="w-5 h-5 text-[var(--accent)] flex-shrink-0"></i>
                     <span>Вентиляция, освещение, электрика, двери</span>
                   </li>
                   <li class="flex items-center gap-3">
-                    <svg class="w-5 h-5 text-[var(--accent)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                    </svg>
+                    <i data-lucide="file-text" class="w-5 h-5 text-[var(--accent)] flex-shrink-0"></i>
                     <span>Развертки стен, камин, ТЗ на столярные изделия</span>
                   </li>
                   <li class="flex items-center gap-3">
-                    <svg class="w-5 h-5 text-[var(--accent)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
-                    </svg>
+                    <i data-lucide="grid-3x3" class="w-5 h-5 text-[var(--accent)] flex-shrink-0"></i>
                     <span>Раскладки плитки и привязка сантехники</span>
                   </li>
                 </ul>
@@ -276,7 +337,7 @@
                 </ul>
               </div>
 
-              <a href="index.html#lead" class="cta cta--primary inline-flex items-center justify-center px-7 py-3 w-full">
+              <a href="../index.html#lead" class="cta cta--primary inline-flex items-center justify-center px-7 py-3 w-full">
                 Обсудить ваш проект
               </a>
             </div>
@@ -292,85 +353,135 @@
             <p class="text-[11px] text-[var(--muted)]">Дизайн-проект апартаментов в Level Barvikha Residence</p>
           </div>
 
-          <!-- Main Featured Image -->
-          <div class="mb-8">
-            <div class="relative overflow-hidden rounded-2xl aspect-[16/10] bg-[var(--line)]">
+          <!-- Gallery Grid with Lightbox -->
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" id="gallery">
+            <!-- Gallery Item 1 - Large featured -->
+            <a href="../media/projects/project-1/project-1-main.jpg" class="glightbox group relative overflow-hidden rounded-2xl aspect-[4/3] sm:col-span-2 lg:col-span-2 lg:row-span-2 bg-[var(--line)] cursor-pointer" data-glightbox="title: Главное фото проекта; description: Дизайн-проект апартаментов в Level Barvikha Residence">
               <img
-                src="media/project-1-900x600.jpg"
+                src="../media/projects/project-1/project-1-main.jpg"
                 alt="Главное фото проекта - Level Barvikha Residence"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 loading="eager"
               />
-            </div>
-          </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="rounded-full bg-white/20 backdrop-blur-sm p-3">
+                  <i data-lucide="zoom-in" class="w-6 h-6 text-white"></i>
+                </div>
+              </div>
+            </a>
 
-          <!-- Gallery Grid -->
-          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" id="gallery">
-            <!-- Gallery Item 1 -->
-            <div class="group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer">
+            <!-- Gallery Item 2 - Living Room -->
+            <a href="../media/projects/project-1/livingroom.jpeg" class="glightbox group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer" data-glightbox="title: Гостиная; description: Интерьер гостиной зоны">
               <img
-                src="media/project-1-900x600.jpg"
-                alt="Интерьер гостиной"
-                class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                src="../media/projects/project-1/livingroom.jpeg"
+                alt="Гостиная"
+                class="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <i data-lucide="zoom-in" class="w-5 h-5 text-white"></i>
+              </div>
+            </a>
 
-            <!-- Gallery Item 2 -->
-            <div class="group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer">
+            <!-- Gallery Item 3 - Kitchen -->
+            <a href="../media/projects/project-1/kitchen2.webp" class="glightbox group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer" data-glightbox="title: Кухня; description: Кухонная зона с обеденной зоной">
               <img
-                src="https://placehold.co/900x600"
-                alt="Интерьер кухни"
-                class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                src="../media/projects/project-1/kitchen2.webp"
+                alt="Кухня"
+                class="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <i data-lucide="zoom-in" class="w-5 h-5 text-white"></i>
+              </div>
+            </a>
 
-            <!-- Gallery Item 3 -->
-            <div class="group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer">
+            <!-- Gallery Item 4 - Kitchen Table -->
+            <a href="../media/projects/project-1/kitchentable.jpg" class="glightbox group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer" data-glightbox="title: Обеденная зона; description: Обеденный стол в кухне-гостиной">
               <img
-                src="https://placehold.co/900x600"
-                alt="Интерьер спальни"
-                class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                src="../media/projects/project-1/kitchentable.jpg"
+                alt="Обеденная зона"
+                class="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <i data-lucide="zoom-in" class="w-5 h-5 text-white"></i>
+              </div>
+            </a>
 
-            <!-- Gallery Item 4 -->
-            <div class="group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer">
+            <!-- Gallery Item 5 - Master Bedroom -->
+            <a href="../media/projects/project-1/masterbedroom.jpeg" class="glightbox group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer" data-glightbox="title: Главная спальня; description: Главная спальня с эргономичным дизайном">
               <img
-                src="media/project-1-900x600.jpg"
-                alt="Детали интерьера"
-                class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                src="../media/projects/project-1/masterbedroom.jpeg"
+                alt="Главная спальня"
+                class="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <i data-lucide="zoom-in" class="w-5 h-5 text-white"></i>
+              </div>
+            </a>
 
-            <!-- Gallery Item 5 -->
-            <div class="group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer">
+            <!-- Gallery Item 6 - Bedroom -->
+            <a href="../media/projects/project-1/bedroom.jpeg" class="glightbox group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer" data-glightbox="title: Спальня; description: Интерьер спальни">
               <img
-                src="https://placehold.co/900x600"
-                alt="Зона отдыха"
-                class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                src="../media/projects/project-1/bedroom.jpeg"
+                alt="Спальня"
+                class="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <i data-lucide="zoom-in" class="w-5 h-5 text-white"></i>
+              </div>
+            </a>
 
-            <!-- Gallery Item 6 -->
-            <div class="group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer">
+            <!-- Gallery Item 7 - Entrance Hall -->
+            <a href="../media/projects/project-1/entrancehall.webp" class="glightbox group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer" data-glightbox="title: Прихожая; description: Интерьер прихожей">
               <img
-                src="https://placehold.co/900x600"
-                alt="Детали отделки"
-                class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                src="../media/projects/project-1/entrancehall.webp"
+                alt="Прихожая"
+                class="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            </div>
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <i data-lucide="zoom-in" class="w-5 h-5 text-white"></i>
+              </div>
+            </a>
+
+            <!-- Gallery Item 8 - Shower -->
+            <a href="../media/projects/project-1/shower.jpeg" class="glightbox group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer" data-glightbox="title: Ванная комната; description: Душ в ванной комнате">
+              <img
+                src="../media/projects/project-1/shower.jpeg"
+                alt="Ванная комната"
+                class="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <i data-lucide="zoom-in" class="w-5 h-5 text-white"></i>
+              </div>
+            </a>
+
+            <!-- Gallery Item 9 - Sink -->
+            <a href="../media/projects/project-1/sink.webp" class="glightbox group relative overflow-hidden rounded-xl aspect-[4/3] bg-[var(--line)] cursor-pointer" data-glightbox="title: Ванная комната; description: Раковина в ванной комнате">
+              <img
+                src="../media/projects/project-1/sink.webp"
+                alt="Ванная комната"
+                class="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <i data-lucide="zoom-in" class="w-5 h-5 text-white"></i>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -383,10 +494,10 @@
             Обсудим ваш проект и подготовим индивидуальное предложение с прозрачной сметой и фиксированными сроками.
           </p>
           <div class="flex flex-wrap justify-center gap-4">
-            <a href="index.html#lead" class="cta cta--primary inline-flex items-center justify-center px-8 py-3">
+            <a href="../index.html#lead" class="cta cta--primary inline-flex items-center justify-center px-8 py-3">
               Обсудить проект
             </a>
-            <a href="index.html#portfolio" class="cta cta--ghost inline-flex items-center justify-center px-8 py-3">
+            <a href="../index.html#portfolio" class="cta cta--ghost inline-flex items-center justify-center px-8 py-3">
               Другие проекты
             </a>
           </div>
@@ -425,18 +536,18 @@
                 Премиальный ремонт с единым куратором, авторским надзором и прозрачной сметой. Мы берем на себя инженерию, комплектацию и сервис до завершения гарантии.
               </p>
               <div class="flex flex-wrap gap-4">
-                <a href="index.html#lead" class="cta cta--primary inline-flex items-center justify-center px-7 py-3">Обсудить проект</a>
+                <a href="../index.html#lead" class="cta cta--primary inline-flex items-center justify-center px-7 py-3">Обсудить проект</a>
                 <a href="mailto:hello@example.com" class="cta cta--ghost inline-flex items-center justify-center px-7 py-3">hello@example.com</a>
               </div>
             </div>
             <div class="grid gap-8 sm:grid-cols-2 text-[12px] text-[color:rgba(255,255,255,0.72)]">
               <div class="space-y-3 footer-column">
                 <div class="text-[10px] uppercase tracking-[0.18em] text-[color:rgba(255,255,255,0.5)]">Навигация</div>
-                <a class="footer-link" href="index.html#portfolio">Портфолио</a>
-                <a class="footer-link" href="index.html#services">Услуги</a>
-                <a class="footer-link" href="index.html#process">Процесс</a>
-                <a class="footer-link" href="index.html#team">Команда</a>
-                <a class="footer-link" href="index.html#contacts">Контакты</a>
+                <a class="footer-link" href="../index.html#portfolio">Портфолио</a>
+                <a class="footer-link" href="../index.html#services">Услуги</a>
+                <a class="footer-link" href="../index.html#process">Процесс</a>
+                <a class="footer-link" href="../index.html#team">Команда</a>
+                <a class="footer-link" href="../index.html#contacts">Контакты</a>
               </div>
               <div class="space-y-3 footer-column">
                 <div class="text-[10px] uppercase tracking-[0.18em] text-[color:rgba(255,255,255,0.5)]">Документы</div>
@@ -466,7 +577,38 @@
     </main>
 
     <!-- Main JavaScript -->
-    <script src="js/main.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script>
+      // Initialize GLightbox
+      document.addEventListener('DOMContentLoaded', function() {
+        // Re-initialize Lucide Icons to catch any dynamically added icons
+        if (typeof lucide !== 'undefined' && typeof lucide.createIcons === 'function') {
+          lucide.createIcons();
+        }
+        
+        // Initialize GLightbox
+        if (typeof GLightbox !== 'undefined') {
+          const lightbox = GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true,
+            autoplayVideos: false,
+            openEffect: 'fade',
+            closeEffect: 'fade',
+            slideEffect: 'slide',
+            moreText: 'Показать больше',
+            moreLength: 60,
+            closeButton: true,
+            touchFollowAxis: true,
+            keyboardNavigation: true,
+            closeOnOutsideClick: true,
+            dragAutoSnap: true,
+            dragToleranceX: 40,
+            dragToleranceY: 65
+          });
+        }
+      });
+    </script>
   </body>
 </html>
 
