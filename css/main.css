@@ -240,3 +240,31 @@ button {
   }
 }
 
+/* ===== GLightbox Custom Styles ===== */
+/* Ensure images in lightbox display properly without bars */
+.glightbox-container .gslide-image img {
+  object-fit: contain !important;
+  max-width: 100%;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.glightbox-container .gslide-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  padding: 0;
+}
+
+/* Gallery preview images - no side bars */
+/* Apply only to gallery images, not to plans */
+#gallery .glightbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
